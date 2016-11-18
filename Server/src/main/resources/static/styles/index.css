@@ -1,3 +1,21 @@
 body{
-    background: red;
+    background-color: #cccccc;
 }
+
+.secondary.pointing.menu{
+    background-color: #FF4500;
+}
+
+.ui.basic.segment{
+    background: inherit;
+    border: none;
+}
+
+.ui.large.image{
+    margin: auto;
+}
+
+.ui.inverted.segment, .ui.primary.inverted.segment{
+    border-color: #ff8000 !important;
+}
+

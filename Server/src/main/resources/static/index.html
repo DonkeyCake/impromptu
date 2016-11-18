@@ -1,15 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <script src="lib/semantic/semantic.min.js"></script>
-    <link href="lib/semantic/semantic.min.css" rel="stylesheet"/>
-    <title>imPROMPTU</title>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>Homepage - Semantic</title>
+    <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+    <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+    <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+
+    <style type="text/css">
+
+        .hidden.menu {
+            display: none;
+        }
+
+        .masthead.segment {
+            min-height: 700px;
+            padding: 1em 0em;
+        }
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+        }
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
+
+        .ui.vertical.stripe {
+            padding: 8em 0em;
+        }
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
+        .ui.vertical.stripe .button + h3,
+        .ui.vertical.stripe p + h3 {
+            margin-top: 3em;
+        }
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
+
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+
+
+    </style>
+
+    <script src="assets/library/jquery.min.js"></script>
+    <script src="../dist/components/visibility.js"></script>
+    <script src="../dist/components/sidebar.js"></script>
+    <script src="../dist/components/transition.js"></script>
+    <script>
+        $(document)
+                .ready(function() {
+
+                    // fix menu when passed
+                    $('.masthead')
+                            .visibility({
+                                once: false,
+                                onBottomPassed: function() {
+                                    $('.fixed.menu').transition('fade in');
+                                },
+                                onBottomPassedReverse: function() {
+                                    $('.fixed.menu').transition('fade out');
+                                }
+                            })
+                    ;
+
+                    // create sidebar and attach to menu open
+                    $('.ui.sidebar')
+                            .sidebar('attach events', '.toc.item')
+                    ;
+
+                })
+        ;
+    </script>
 </head>
 <body>
-This is the index
-<button class="ui button">
-    Download
-</button>
+
+<!-- Following Menu -->
+<div class="ui orange large top fixed hidden menu">
+    <div class="ui container">
+        <a class="active item">Home</a>
+        <a class="item">Files</a>
+    </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui yellow vertical inverted sidebar menu">
+    <a class="active item">Home</a>
+    <a class="item">Files</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui orange inverted vertical masthead center aligned segment">
+
+        <div class="ui container">
+            <div class="ui large secondary inverted pointing menu test">
+                <a class="toc item">
+                    <i class="sidebar icon"></i>
+                </a>
+                <a class="active item">Home</a>
+                <a class="item">Files</a>
+            </div>
+        </div>
+
+        <div class="ui text container cent">
+            <img class="ui large image centered" src="images/Promptu_Logo_white.png">
+
+            <h2>"Learn songs your way"</h2>
+            <div class="ui huge primary button">Download <i class="download icon"></i></div>
+        </div>
+
+    </div>
+
+    <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+            <div class="center aligned row">
+                <div class="column">
+                    <h3>Mission Statement</h3>
+                    <p>We want to make learning songs easier for people by allowing them to break down the structure in a way that makes sense to them</p>
+                </div>
+                <div class="column">
+                    <p>
+                        <img src="images/download.jpg" class="ui medium centered image">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui vertical stripe segment">
+        <div class="ui text container">
+            <h3 class="ui centered header">Video</h3>
+            <video width="640" height="480" controls autoplay loop>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+
+    <div class="ui orange inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">About</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Sitemap</a>
+                        <a href="#" class="item">Contact Us</a>
+                        <a href="#" class="item">Religious Ceremonies</a>
+                        <a href="#" class="item">Gazebo Plans</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Services</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Banana Pre-Order</a>
+                        <a href="#" class="item">DNA FAQ</a>
+                        <a href="#" class="item">How To Access</a>
+                        <a href="#" class="item">Favorite X-Men</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Footer Header</h4>
+                    <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+
 </html>
