@@ -30,6 +30,7 @@ public class LocalDatabase {
         dataSet = new DataSet();
         dataSet.markers = new LinkedHashSet<>();
         dataSet.fingerprintWaveform = new HashMap<>();
+        dataSet.helpers = new LinkedHashSet<>();
     }
 
     public String getWaveformPath(String fingerprint) throws FingerprintException {
@@ -41,6 +42,19 @@ public class LocalDatabase {
         return dataSet.markers.stream()
                 .filter(m -> m.mbid.contentEquals(fingerprint))
                 .collect(Collectors.toSet());
+    }
+
+    public Set<Helper> getHelpers(MarkerPoint marker) {
+        return dataSet.helpers.stream()
+                .filter(h -> h.uid.contentEquals(marker.uid))
+                .collect(Collectors.toSet());
+    }
+
+    public Map<MarkerPoint, Set<Helper>> getHelperTree(String fingerprint) {
+        Set<MarkerPoint> markers = getMarkers(fingerprint);
+        Map<MarkerPoint, Set<Helper>> out = new HashMap<>();
+        markers.forEach(m -> out.put(m, getHelpers(m)));
+        return out;
     }
 
     public void addMarker(MarkerPoint marker) {
@@ -92,6 +106,7 @@ public class LocalDatabase {
     public static class DataSet {
 
         private Set<MarkerPoint> markers;
+        private Set<Helper> helpers;
         private Map<String, String> fingerprintWaveform;
 
         public Set<MarkerPoint> getMarkers() {
@@ -101,6 +116,10 @@ public class LocalDatabase {
         public void setMarkers(Set<MarkerPoint> markers) {
             this.markers = markers;
         }
+
+        public Set<Helper> getHelpers() { return helpers; }
+
+        public void setHelpers(Set<Helper> helpers) { this.helpers = helpers; }
 
         public Map<String, String> getFingerprintWaveform() {
             return fingerprintWaveform;

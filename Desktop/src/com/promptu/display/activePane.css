@@ -11,11 +11,30 @@
 	-fx-background-radius: 40px;
 }
 
-.hamburger {
-	/*-fx-background-color: none;*/
-	/*-fx-background-image: url('/fx/hamburger.png');*/
-}
-
 .audioControl {
 	-fx-background-radius: 40px;
+}
+
+.marker {
+    -fx-background-color: gray;
+}
+
+.marker_selected {
+    -fx-background-color: orange;
+}
+
+.marker_0 {
+    -fx-background-color: red;
+}
+
+.marker_1 {
+    -fx-background-color: yellow;
+}
+
+.inplacetext {
+    -fx-background-color: none;
+}
+
+.inplacetext:active {
+    -fx-background-color: green;
 }

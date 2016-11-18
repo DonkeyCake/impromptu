@@ -7,23 +7,19 @@ public class TimeUnit implements Comparable {
 
     // TODO establish standard time unit
 
-    int tickIndex;
+    float percentage;
 
-    public void increment() {
-        tickIndex++;
+    public float tickIndex() {
+        return percentage;
     }
 
-    public int tickIndex() {
-        return tickIndex;
-    }
-
-    public void tickIndex(int index) {
-        tickIndex = index;
+    public void tickIndex(float index) {
+        percentage = index;
     }
 
     @Override
     public String toString() {
-        return ""+tickIndex;
+        return ""+percentage;
     }
 
     @Override
