@@ -1,0 +1,21 @@
+.title {
+	-fx-padding: 0 0 8 8;
+	-fx-text-color: white;
+}
+
+.controls {
+	-fx-background-color: #FF4A00;
+}
+
+.roundedField {
+	-fx-background-radius: 40px;
+}
+
+.hamburger {
+	/*-fx-background-color: none;*/
+	/*-fx-background-image: url('/fx/hamburger.png');*/
+}
+
+.audioControl {
+	-fx-background-radius: 40px;
+}
