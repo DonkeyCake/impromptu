@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" group="ImPromptU" />
       <module fileurl="file://$PROJECT_DIR$/Desktop/Desktop.iml" filepath="$PROJECT_DIR$/Desktop/Desktop.iml" group="ImPromptU" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server.iml" filepath="$PROJECT_DIR$/.idea/modules/Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server_main.iml" group="Server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Server_test.iml" group="Server" />
       <module fileurl="file://$PROJECT_DIR$/impromptu.iml" filepath="$PROJECT_DIR$/impromptu.iml" />
     </modules>
   </component>
