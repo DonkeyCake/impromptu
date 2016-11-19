@@ -21,6 +21,8 @@ public class FileSelector {
 
     private FileSelector() {
         chooser = new FileChooser();
+        setDirectory(new File("./"));
+//        setFilter(new FileChooser.ExtensionFilter("Promptu files", "promptu", "prmpt"));
     }
 
     private FileChooser chooser;
@@ -31,6 +33,17 @@ public class FileSelector {
         return this;
     }
 
+    public FileSelector setFilter(FileChooser.ExtensionFilter filter) {
+//        chooser.getExtensionFilters().clear();
+        chooser.getExtensionFilters().add(filter);
+        return this;
+    }
+
+    public FileSelector setDirectory(File file) {
+        chooser.setInitialDirectory(file);
+        return this;
+    }
+
     public FileSelector setTitle(String title) {
         this.chooser.setTitle(title);
         return this;
@@ -38,17 +51,20 @@ public class FileSelector {
 
     public void singleLoad(Consumer<File> withFile) {
         File file = chooser.showOpenDialog(this.stage);
-        withFile.accept(file);
+        if(file != null)
+            withFile.accept(file);
     }
 
     public void multiLoad(Consumer<List<File>> withFiles) {
         List<File> files = chooser.showOpenMultipleDialog(this.stage);
-        withFiles.accept(files);
+        if(files != null)
+            withFiles.accept(files);
     }
 
     public void save(Consumer<File> toFile) {
         File file = chooser.showSaveDialog(this.stage);
-        toFile.accept(file);
+        if(file != null)
+            toFile.accept(file);
     }
 
 }

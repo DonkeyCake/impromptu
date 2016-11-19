@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-
 
 <GridPane fx:id="rootGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="657.0" style="-fx-padding: 8;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.promptu.display.sub.MarkerPanelController">
   <columnConstraints>
@@ -28,5 +29,10 @@
             <Font size="16.0" />
          </font>
       </TextField>
+      <ImageView fx:id="deleteIcon" fitHeight="36.0" fitWidth="35.0" onMouseReleased="#delete" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../delete.png" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>

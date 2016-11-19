@@ -41,9 +41,9 @@ public class DatabaseTest {
         db.addMarker(markerBlock2);
         db.addMarker(markerBlock3);
 
-        db.addWaveform("test1", "Waveform1");
-        db.addWaveform("test2", "Waveform2");
-        db.addWaveform("test3", "Waveform3");
+//        db.addWaveform("test1", "Waveform1");
+//        db.addWaveform("test2", "Waveform2");
+//        db.addWaveform("test3", "Waveform3");
 
         db.outputToFile("localDB.json");
     }

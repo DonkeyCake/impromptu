@@ -7,8 +7,6 @@ import com.promptu.display.sub.MarkerPanelController;
 import com.promptu.io.FileSelector;
 import com.promptu.serialization.SerializationManager;
 import com.promptu.utils.LambdaAnimationTimer;
-import com.promptu.utils.StringGenerator;
-import com.sun.corba.se.impl.orbutil.graph.Graph;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -20,19 +18,16 @@ import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
-import javafx.scene.effect.BlendMode;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TouchEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -50,7 +45,8 @@ public class ActivePaneController implements Initializable {
     public static final String PLAY_ICON = "com/promptu/display/play.png";
     public static final String PAUSE_ICON = "com/promptu/display/pause.png";
     private float stretchScale = 5;
-    private float speed = 5f;
+    private long duration = 1000;
+    private long current = 0;
     private double markerCutoff = 30;
 
     private double currentX;
@@ -64,6 +60,7 @@ public class ActivePaneController implements Initializable {
     private TimeUnit selectedUnit;
     private boolean isDragging = false;
     private boolean canDrag = false;
+    private String waveformUrl;
     private Set<MarkerPoint> removedPoints;
 
     @Override
@@ -85,6 +82,7 @@ public class ActivePaneController implements Initializable {
         Sidebar sideBar = new Sidebar(40, hamburger, save, load);
         rootGrid.getChildren().add(sideBar);
 
+        splitPane.setDividerPosition(0, 0.99);
         float index = 0;
 //
 //        for(int i = 0; i < 20; i++) {
@@ -121,9 +119,30 @@ public class ActivePaneController implements Initializable {
         timer.start();
     }
 
+    public void setDuration(int seconds) {
+        duration = (long) (seconds * 1000);
+    }
+    public void setMillis(long millis) {
+        duration = millis;
+    }
+
+    public void setWaveform(String url) {
+        if(url == null || url.length() <= 2)
+            url = getClass().getResource("rainingwaveform.png").toExternalForm();
+        waveformUrl = url;
+        setWaveform(new Image(url));
+    }
+    private void setWaveform(Image image) {
+        testWaveform.setImage(image);
+    }
+
     private void save(ActionEvent event) {
         FileSelector.instance().setTitle("Save to...").save(file -> Platform.runLater(() -> {
             LocalDatabase.DataSet set = new LocalDatabase.DataSet();
+            set.setTrackName(titleLbl.getText());
+            set.setArtist(artistLbl.getText());
+            set.setMillis(duration);
+            set.setFingerprintWaveform(waveformUrl);
             set.getMarkers().addAll(testMarkers);
             SerializationManager.instance().toFile(file.toPath(), set);
         }));
@@ -135,7 +154,11 @@ public class ActivePaneController implements Initializable {
             try {
                 set = SerializationManager.instance().fromFile(file.toPath(), LocalDatabase.DataSet.class);
                 testMarkers.clear();
-//                testMarkers.addAll(set.getMarkers());
+                titleLbl.setText(set.getTrackName());
+                artistLbl.setText(set.getArtist());
+                setMillis(set.getMillis());
+                String waveform = set.getFingerprintWaveform();
+                setWaveform(waveform);
                 set.getMarkers().forEach(m -> {
                     testMarkers.add(m);
                     addMarker(m);
@@ -157,6 +180,9 @@ public class ActivePaneController implements Initializable {
     @FXML private SplitPane splitPane;
     @FXML private ImageView hamburger;
     @FXML private GridPane rootGrid;
+    @FXML private TextField titleLbl;
+    @FXML private TextField artistLbl;
+    @FXML private Label millisTimer;
 
     @FXML
     public void togglePlay(MouseEvent event) {
@@ -263,6 +289,7 @@ public class ActivePaneController implements Initializable {
             return;
         }
         selectedMarker = first.get();
+        markerControllers.values().forEach(entry -> entry.getValue().onSelection(selectedMarker));
         invalidateMarkerDetails(null);
     }
 
@@ -281,6 +308,7 @@ public class ActivePaneController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sub/markerPanel.fxml"));
             Parent root = loader.load();
             MarkerPanelController controller = loader.getController();
+            controller.setParentController(this);
             controller.setMarker(point);
             markerControllers.put(point, new AbstractMap.SimpleEntry<>(root, controller));
         } catch (IOException e) {
@@ -381,9 +409,11 @@ public class ActivePaneController implements Initializable {
         if(isPlaying) {
             newImg = new Image(PAUSE_ICON);
             splitPane.setDividerPosition(0, 0.99);
+            markerControllers.forEach((k, v) -> v.getValue().onSelection(selectedMarker = null));
         }else {
             newImg = new Image(PLAY_ICON);
-            splitPane.setDividerPosition(0, 0.7);
+//            splitPane.setDividerPosition(0, 0.7);
+            splitPane.setDividerPosition(0, 0.99);
         }
         resetTimers();
         markerContainer.getChildren().clear();
@@ -466,18 +496,40 @@ public class ActivePaneController implements Initializable {
         return endX;
     }
 
+    private long frameCount = 0;
     // Continuous rendering, called every frame
     private void draw(long handle) {
-//        double delta = (handle - System.currentTimeMillis())/1000;
+        long delta;
+        frameCount++;
+        if(frameCount % 3 == 0) {
+//            delta = Math.abs(lastDelta - System.currentTimeMillis());
+            delta = 17;
+        }else{
+            delta = 16;
+        }
+        if(isPlaying) current += delta;
+        else{
+            current = (long) ((-currentX / getCanvasWidth())*duration);
+        }
         clearCanvas();
         drawCanvasSmall();
         drawCanvasLarge();
-        if(!isPlaying) return;
-        currentX -= speed;
+        double t = (double)current / (double)duration;
+        millisTimer.setText(String.format("%s/%s: %s%%", current, duration, Math.round(t*100)));
+        if(!isPlaying) {
+            current = -3000;
+            return;
+        }
+        currentX = -lerp(0, getCanvasWidth(), t);
+        System.out.printf("%s / %s = %s | %s\n", current, duration, t, currentX);
         if(percentAcross() > 1) {
             setState(!isPlaying);
             resetTimers();
         }
+    }
+
+    private double lerp(double x, double y, double t) {
+        return x + (y - x) * t;
     }
 
     private double getCanvasWidth() {
@@ -488,4 +540,10 @@ public class ActivePaneController implements Initializable {
         return -currentX / fullWidth;
     }
 
+    public void deleteMarker(MarkerPoint marker) {
+        markerControllers.remove(marker);
+        testMarkers.remove(marker);
+        invalidateMarkerDetails(null);
+        rebuildMarkerDetails(true);
+    }
 }
