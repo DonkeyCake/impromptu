@@ -508,15 +508,18 @@ public class ActivePaneController implements Initializable {
             delta = 16;
         }
         if(isPlaying) current += delta;
+        else{
+            current = (long) ((-currentX / getCanvasWidth())*duration);
+        }
         clearCanvas();
         drawCanvasSmall();
         drawCanvasLarge();
+        double t = (double)current / (double)duration;
+        millisTimer.setText(String.format("%s/%s: %s%%", current, duration, Math.round(t*100)));
         if(!isPlaying) {
             current = -3000;
             return;
         }
-        double t = (double)current / (double)duration;
-        millisTimer.setText(String.format("%s/%s: %s%%", current, duration, Math.round(t*100)));
         currentX = -lerp(0, getCanvasWidth(), t);
         System.out.printf("%s / %s = %s | %s\n", current, duration, t, currentX);
         if(percentAcross() > 1) {

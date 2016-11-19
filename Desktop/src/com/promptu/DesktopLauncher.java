@@ -19,6 +19,7 @@ public class DesktopLauncher extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Active Pane");
+        primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("display/activePane.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("display/activePane.css").toExternalForm());
