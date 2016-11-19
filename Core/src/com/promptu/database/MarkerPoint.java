@@ -22,8 +22,8 @@ public class MarkerPoint {
         startTime = new TimeUnit();
         mbid("");
         colourHex("");
-        header("Header");
-        text("Text");
+        header("");
+        text("");
     }
 
     public String uid() {
@@ -50,7 +50,11 @@ public class MarkerPoint {
         this.mbid = mbid;
     }
     public void startTime(String str) {
-
+        try{
+            startTime.tickIndex(Float.parseFloat(str));
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public void colourHex(String hex) {
         this.colourHex = hex;

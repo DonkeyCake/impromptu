@@ -109,6 +109,12 @@ public class LocalDatabase {
         private Set<Helper> helpers;
         private Map<String, String> fingerprintWaveform;
 
+        public DataSet() {
+            markers = new LinkedHashSet<>();
+            helpers = new LinkedHashSet<>();
+            fingerprintWaveform = new HashMap<>();
+        }
+
         public Set<MarkerPoint> getMarkers() {
             return markers;
         }

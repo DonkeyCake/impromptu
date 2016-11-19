@@ -17,7 +17,11 @@ public class MarkerBlock extends MarkerPoint {
     }
 
     public void endTime(String str) {
-
+        try{
+            endTime.tickIndex(Float.parseFloat(str));
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public MarkerType getType() {
