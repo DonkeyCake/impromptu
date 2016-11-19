@@ -1,5 +1,6 @@
 package com.promptu.display;
 
+import com.promptu.adhoc.PlaySound;
 import com.promptu.components.Sidebar;
 import com.promptu.database.*;
 import com.promptu.display.sub.HelperPanelController;
@@ -9,6 +10,7 @@ import com.promptu.serialization.SerializationManager;
 import com.promptu.utils.LambdaAnimationTimer;
 import javafx.animation.*;
 import javafx.application.Platform;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +25,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -30,6 +33,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import javax.imageio.ImageIO;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -449,7 +454,7 @@ public class ActivePaneController implements Initializable {
     private void drawCanvasLarge() {
         Image image = testWaveform.getImage();
         final GraphicsContext context = canvasLarge.getGraphicsContext2D();
-        context.drawImage(image, currentX, 0, canvasLarge.getWidth()*5, canvasLarge.getHeight());
+        context.drawImage(image, currentX, 0, getCanvasWidth(), canvasLarge.getHeight());
         drawMarkers(context);
         context.setStroke(Color.RED);
         context.strokeLine(30, 0, 30, canvasLarge.getHeight());
@@ -497,6 +502,8 @@ public class ActivePaneController implements Initializable {
     }
 
     private long frameCount = 0;
+    private long prev = 0;
+    private double previousX = 0;
     // Continuous rendering, called every frame
     private void draw(long handle) {
         long delta;
@@ -518,7 +525,12 @@ public class ActivePaneController implements Initializable {
         millisTimer.setText(String.format("%s/%s: %s%%", current, duration, Math.round(t*100)));
         if(!isPlaying) {
             current = -3000;
+            PlaySound.instance().stopSound();
             return;
+        }
+        long cutoff = -500;
+        if(prev <= cutoff && current >= cutoff) {
+            PlaySound.instance().playSound("music.wav");
         }
         currentX = -lerp(0, getCanvasWidth(), t);
         System.out.printf("%s / %s = %s | %s\n", current, duration, t, currentX);
@@ -526,6 +538,8 @@ public class ActivePaneController implements Initializable {
             setState(!isPlaying);
             resetTimers();
         }
+        prev = current;
+        previousX = currentX;
     }
 
     private double lerp(double x, double y, double t) {
