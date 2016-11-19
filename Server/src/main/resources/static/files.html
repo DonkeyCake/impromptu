@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>Home - Promptu</title>
-    <link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+    <title>Files - Promptu</title>
+    <link rel="stylesheet" type="text/css" href="dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/site.css">
 
-    <link rel="stylesheet" type="text/css" href="../dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/menu.css">
 
-    <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="dist/components/transition.css">
 
     <style type="text/css">
 
@@ -117,9 +117,9 @@
     </style>
 
     <script src="assets/library/jquery.min.js"></script>
-    <script src="../dist/components/visibility.js"></script>
-    <script src="../dist/components/sidebar.js"></script>
-    <script src="../dist/components/transition.js"></script>
+    <script src="dist/components/visibility.js"></script>
+    <script src="dist/components/sidebar.js"></script>
+    <script src="dist/components/transition.js"></script>
     <script>
         $(document)
                 .ready(function() {
@@ -151,69 +151,74 @@
 <!-- Following Menu -->
 <div class="ui orange large top fixed hidden menu">
     <div class="ui container">
-        <a href="index.html" class="active item">Home</a>
-        <a href="files.html" class="item">Files</a>
+        <a href="index.html" class="item">Home</a>
+        <a href="files.html" class="active item">Files</a>
     </div>
 </div>
 
 <!-- Sidebar Menu -->
 <div class="ui orange vertical inverted sidebar menu">
-    <a href="index.html" class="active item">Home</a>
-    <a href="files.html" class="item">Files</a>
+    <a href="index.html" class="item">Home</a>
+    <a href="files.html" class="active item">Files</a>
 </div>
 
 
 <!-- Page Contents -->
 <div class="pusher">
-    <div class="ui orange inverted vertical masthead center aligned segment">
+    <div class="ui orange inverted vertical masthead center aligned segment" style="max-height: 200px;">
 
         <div class="ui container">
             <div class="ui large secondary inverted pointing menu" style="border: none">
                 <a class="toc item">
                     <i class="sidebar icon"></i>
                 </a>
-                <a href="index.html" class="active item">Home</a>
-                <a href="files.html" class="item">Files</a>
-            </div>
-        </div>
-
-        <div class="ui text container">
-            <img class="ui large image centered" style="margin-top: 40px" src="images/Promptu_Logo_white.png">
-
-            <h2>"Learn songs your way"</h2>
-            <div class="ui huge primary button" style="margin-top: 40px">Download <i class="download icon"></i></div>
-        </div>
-
-    </div>
-
-    <div class="ui vertical stripe quote segment">
-        <div class="ui equal width stackable internally celled grid">
-            <div class="center aligned row">
-                <div class="column">
-                    <h3 style="margin-top: 50px;">Mission Statement</h3>
-                    <p>We want to make learning songs easier for people by allowing them to break down the structure in a way that makes sense to them</p>
-                </div>
-                <div class="column">
-                    <p>
-                        <img src="images/Promptu_Mock_Tablet.jpg" class="ui small centered image" style="width: 250px;">
-                    </p>
-                </div>
+                <a href="index.html" class="item">Home</a>
+                <a href="files.html" class="active item">Files</a>
             </div>
         </div>
     </div>
 
-    <div class="ui vertical stripe segment" style="padding-top: 4em;">
-        <div class="ui text container">
-            <h3 class="ui centered header">Video</h3>
-            <video width="700" height="480" style="padding-top: 2em; margin: auto" controls autoplay loop>
-                <source src="images/Promptu.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>Yoshi Tannamuri</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+            </tr>
+        </table>
 
 
-    <div class="ui orange inverted vertical footer segment">
+    <div>
+        <div class="ui orange inverted vertical footer segment">
         <div class="ui container">
             <div class="ui stackable inverted divided equal height stackable grid">
                 <div class="three wide column">
@@ -243,6 +248,6 @@
     </div>
 </div>
 
-</body>
+</div></body>
 
 </html>
