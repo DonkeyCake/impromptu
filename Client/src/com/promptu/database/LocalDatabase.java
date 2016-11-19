@@ -28,15 +28,8 @@ public class LocalDatabase {
 
     private LocalDatabase() {
         dataSet = new DataSet();
-        dataSet.markers = new LinkedHashSet<>();
-        dataSet.fingerprintWaveform = new HashMap<>();
-        dataSet.helpers = new LinkedHashSet<>();
     }
 
-    public String getWaveformPath(String fingerprint) throws FingerprintException {
-        if(!dataSet.fingerprintWaveform.containsKey(fingerprint)) throw new FingerprintException(fingerprint);
-        return dataSet.fingerprintWaveform.get(fingerprint);
-    }
 
     public Set<MarkerPoint> getMarkers(String fingerprint) {
         return dataSet.markers.stream()
@@ -59,10 +52,6 @@ public class LocalDatabase {
 
     public void addMarker(MarkerPoint marker) {
         dataSet.markers.add(marker);
-    }
-
-    public void addWaveform(String fingerprint, String waveform) {
-        dataSet.fingerprintWaveform.put(fingerprint, waveform);
     }
 
     public void outputToFile(String filePath) {
@@ -97,23 +86,34 @@ public class LocalDatabase {
 
         public static TrackInfo fromFingerprint(String fingerprint) throws FingerprintException {
             LocalDatabase db = LocalDatabase.instance();
-            String waveform = db.getWaveformPath(fingerprint);
-            return new TrackInfo(fingerprint,
-                    waveform, db.getMarkers(fingerprint));
+            return new TrackInfo(fingerprint, db.dataSet.fingerprintWaveform, db.getMarkers(fingerprint));
         }
     }
 
     public static class DataSet {
 
+        private String trackName;
+        private String artist;
         private Set<MarkerPoint> markers;
         private Set<Helper> helpers;
-        private Map<String, String> fingerprintWaveform;
+        private String fingerprintWaveform;
 
         public DataSet() {
             markers = new LinkedHashSet<>();
             helpers = new LinkedHashSet<>();
-            fingerprintWaveform = new HashMap<>();
+            fingerprintWaveform = "";
+            trackName = "";
+            artist = "";
         }
+
+        public String getTrackName() { return trackName; }
+        public void setTrackName(String trackName) { this.trackName = trackName; }
+
+        public String getArtist() { return artist; }
+        public void setArtist(String artist) { this.artist = artist; }
+
+        public String getFingerprintWaveform() { return this.fingerprintWaveform; }
+        public void setFingerprintWaveform(String fingerprintWaveform) { this.fingerprintWaveform = fingerprintWaveform; }
 
         public Set<MarkerPoint> getMarkers() {
             return markers;
@@ -127,23 +127,15 @@ public class LocalDatabase {
 
         public void setHelpers(Set<Helper> helpers) { this.helpers = helpers; }
 
-        public Map<String, String> getFingerprintWaveform() {
-            return fingerprintWaveform;
-        }
-
-        public void setFingerprintWaveform(Map<String, String> fingerprintWaveform) {
-            this.fingerprintWaveform = fingerprintWaveform;
-        }
 
         public DataSet clear() {
             this.markers.clear();
-            this.fingerprintWaveform.clear();
+            this.fingerprintWaveform = "";
             return this;
         }
 
         public DataSet importFromOther(DataSet other) {
             other.markers.forEach(this.markers::add);
-            other.fingerprintWaveform.forEach(this.fingerprintWaveform::put);
             return this;
         }
     }

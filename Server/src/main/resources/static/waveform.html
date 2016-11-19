@@ -1,0 +1,44 @@
+<html>
+<head><title>Some demo title</title></head>
+<body>
+<form action="/uploads" enctype="multipart/form-data" method="POST">
+    <input type="file" name="my_file" multiple="multiple" />
+</form>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//assets.transloadit.com/js/jquery.transloadit2-v2-latest.js"></script>
+<script type="text/javascript">
+$(function() {
+  $('form').transloadit({
+    wait: true,
+    triggerUploadOnFileSelection: true,
+    params: {
+      auth: {
+				// Secure via: https://transloadit.com/docs/api-docs/#authentication
+        key: "19b15f90ae4511e689d733e96e717ec9",
+      },
+      steps: {
+        "wav": {
+          "use": ":original",
+          "robot": "/audio/encode",
+          "preset": "wav",
+          "ffmpeg_stack": "v2.2.3"
+        },
+        "waveform": {
+          "robot": "/audio/waveform",
+          "use": "wav",
+          "result": true,
+          "width": 300,
+          "height": 200,
+          "background_color": "ffffffff",
+          "outer_color": "ff0000aa",
+          "center_color": "660000aa"
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
+
