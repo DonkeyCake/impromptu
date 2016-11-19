@@ -24,6 +24,8 @@ public class MarkerAdapter extends TypeAdapter<MarkerPoint> {
         if(markerPoint instanceof MarkerBlock)
             jsonWriter.name("endTime").value(((MarkerBlock)markerPoint).endTime().toString());
         jsonWriter.name("colourHex").value(markerPoint.colourHex());
+        jsonWriter.name("title").value(markerPoint.header());
+        jsonWriter.name("content").value(markerPoint.text());
         jsonWriter.endObject();
     }
 
@@ -35,6 +37,8 @@ public class MarkerAdapter extends TypeAdapter<MarkerPoint> {
         String startTimeStr = "";
         String endTimeStr = "";
         String colourHex = "";
+        String title = "";
+        String content = "";
         while(jsonReader.hasNext()) {
             switch(jsonReader.nextName()) {
                 case "type": type = MarkerType.valueOf(jsonReader.nextString()); break;
@@ -42,6 +46,8 @@ public class MarkerAdapter extends TypeAdapter<MarkerPoint> {
                 case "startTime": startTimeStr = jsonReader.nextString(); break;
                 case "endTime": endTimeStr = jsonReader.nextString(); break;
                 case "colourHex": colourHex = jsonReader.nextString(); break;
+                case "title": title = jsonReader.nextString(); break;
+                case "content": content = jsonReader.nextString(); break;
             }
         }
         jsonReader.endObject();
@@ -53,6 +59,8 @@ public class MarkerAdapter extends TypeAdapter<MarkerPoint> {
         }else{
             point = new MarkerPoint();
         }
+        point.header(title);
+        point.text(content);
         point.mbid(mbid);
         point.startTime(startTimeStr);
         point.colourHex(colourHex);

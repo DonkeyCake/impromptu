@@ -1,27 +1,39 @@
 package com.promptu.display;
 
+import com.promptu.components.Sidebar;
 import com.promptu.database.*;
 import com.promptu.display.sub.HelperPanelController;
 import com.promptu.display.sub.MarkerPanelController;
+import com.promptu.io.FileSelector;
+import com.promptu.serialization.SerializationManager;
 import com.promptu.utils.LambdaAnimationTimer;
 import com.promptu.utils.StringGenerator;
 import com.sun.corba.se.impl.orbutil.graph.Graph;
-import javafx.animation.Animation;
-import javafx.animation.AnimationTimer;
+import javafx.animation.*;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -52,6 +64,7 @@ public class ActivePaneController implements Initializable {
     private TimeUnit selectedUnit;
     private boolean isDragging = false;
     private boolean canDrag = false;
+    private Set<MarkerPoint> removedPoints;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,6 +74,16 @@ public class ActivePaneController implements Initializable {
         markerControllers = new HashMap<>();
         helperControllers = new HashMap<>();
         markerHelpers = new LinkedHashSet<>();
+        removedPoints = new LinkedHashSet<>();
+
+        Button save = new Button("Save");
+        Button load = new Button("Load");
+
+        save.setOnAction(this::save);
+        load.setOnAction(this::load);
+
+        Sidebar sideBar = new Sidebar(40, hamburger, save, load);
+        rootGrid.getChildren().add(sideBar);
 
         float index = 0;
 //
@@ -98,17 +121,48 @@ public class ActivePaneController implements Initializable {
         timer.start();
     }
 
+    private void save(ActionEvent event) {
+        FileSelector.instance().setTitle("Save to...").save(file -> Platform.runLater(() -> {
+            LocalDatabase.DataSet set = new LocalDatabase.DataSet();
+            set.getMarkers().addAll(testMarkers);
+            SerializationManager.instance().toFile(file.toPath(), set);
+        }));
+    }
+
+    private void load(ActionEvent event) {
+        FileSelector.instance().setTitle("Load from...").singleLoad(file -> Platform.runLater(() -> {
+            LocalDatabase.DataSet set = null;
+            try {
+                set = SerializationManager.instance().fromFile(file.toPath(), LocalDatabase.DataSet.class);
+                testMarkers.clear();
+//                testMarkers.addAll(set.getMarkers());
+                set.getMarkers().forEach(m -> {
+                    testMarkers.add(m);
+                    addMarker(m);
+                });
+                invalidateMarkerDetails(null);
+                rebuildMarkerDetails(true);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }));
+    }
+
     @FXML private ImageView playPauseBtn;
     @FXML private ImageView testWaveform;
     @FXML private Canvas canvasLarge;
     @FXML private Canvas canvasSmall;
     @FXML private VBox markerContainer;
     @FXML private VBox helperVBox;
+    @FXML private SplitPane splitPane;
+    @FXML private ImageView hamburger;
+    @FXML private GridPane rootGrid;
 
     @FXML
     public void togglePlay(MouseEvent event) {
         setState(!isPlaying);
-        if(isPlaying) invalidateMarkerDetails();
+        if(isPlaying) invalidateMarkerDetails(null);
+        System.out.println();
     }
 
     @FXML
@@ -139,8 +193,6 @@ public class ActivePaneController implements Initializable {
         double perc = (modX / getCanvasWidth());
         block.startTime().tickIndex((float) perc);
         block.endTime().tickIndex((float) perc + 0.05f);
-        block.header("Header");
-        block.text("Text");
         testMarkers.add(block);
 
         addMarker(block);
@@ -206,11 +258,12 @@ public class ActivePaneController implements Initializable {
                 }).findFirst();
         if(!first.isPresent()) {
             selectedMarker = null;
-            invalidateMarkerDetails();
+            rebuildMarkerDetails(true);
+            invalidateMarkerDetails(null);
             return;
         }
         selectedMarker = first.get();
-        invalidateMarkerDetails();
+        invalidateMarkerDetails(null);
     }
 
     private void loadMarkerDetails() {
@@ -245,9 +298,43 @@ public class ActivePaneController implements Initializable {
         }
     }
 
-    private void invalidateMarkerDetails() {
-        markerContainer.getChildren().clear();
-        final int[] i = {0};
+    private void invalidateMarkerDetails(MarkerPoint point) {
+        if(point != null) {
+            if (removedPoints.contains(point)) return;
+            removedPoints.add(point);
+        }
+
+        if(markerContainer.getChildren().size() > 0 && point != null) {
+            markerContainer.getChildren().forEach(this::shiftNode);
+        }else{
+            rebuildMarkerDetails(false);
+            loadMarkerDetails();
+        }
+//        invalidateHelperDetails();
+    }
+
+    private void shiftNode(Node node) {
+        if(!isPlaying) return;
+        TranslateTransition trans = new TranslateTransition(new Duration(400), markerContainer);
+        trans.setByY(-100);
+        trans.play();
+        trans.setOnFinished(event -> {
+            if(node.localToScene(node.getLayoutBounds()).intersects(canvasLarge.localToScene(canvasLarge.getLayoutBounds())))
+                node.setVisible(false);
+            rebuildMarkerDetails();
+        });
+    }
+
+    private void rebuildMarkerDetails() {
+        rebuildMarkerDetails(false);
+    }
+    private void rebuildMarkerDetails(boolean clear) {
+        if(clear) {
+            markerControllers.values().forEach(entry -> entry.getKey().setVisible(true));
+            markerContainer.getChildren().clear();
+            markerContainer.translateYProperty().set(0);
+        }
+        final int[] i = {0, 0};
         currentMarkers.forEach(marker -> {
             Map.Entry<Parent, MarkerPanelController> entry = markerControllers.get(marker);
             entry.getValue().setHeader(marker.header());
@@ -255,13 +342,22 @@ public class ActivePaneController implements Initializable {
             entry.getKey().minWidth(markerContainer.getWidth());
             entry.getKey().prefWidth(markerContainer.getWidth());
             entry.getKey().maxWidth(markerContainer.getWidth());
-            if(i[0] < 2) entry.getValue().setClass("marker_"+ (i[0]));
-            else entry.getValue().setClass("marker");
-            i[0]++;
-            markerContainer.getChildren().add(entry.getKey());
+
+            if(entry.getKey().isVisible()) {
+                if (i[0] < 2) entry.getValue().setClass("marker_" + (i[0]));
+                else entry.getValue().setClass("marker");
+                i[0]++;
+            }
+
+
+            entry.getKey().translateYProperty();
+            markerContainer.requestLayout();
+
+            if(!markerContainer.getChildren().contains(entry.getKey())) {
+                entry.getKey().setVisible(true);
+                markerContainer.getChildren().add(entry.getKey());
+            }
         });
-        loadMarkerDetails();
-//        invalidateHelperDetails();
     }
 
     private void invalidateHelperDetails() {
@@ -279,10 +375,20 @@ public class ActivePaneController implements Initializable {
 
     private void setState(boolean newState) {
         isPlaying = newState;
+        removedPoints.clear();
 
         Image newImg;
-        if(isPlaying) newImg = new Image(PAUSE_ICON);
-        else newImg = new Image(PLAY_ICON);
+        if(isPlaying) {
+            newImg = new Image(PAUSE_ICON);
+            splitPane.setDividerPosition(0, 0.99);
+        }else {
+            newImg = new Image(PLAY_ICON);
+            splitPane.setDividerPosition(0, 0.7);
+        }
+        resetTimers();
+        markerContainer.getChildren().clear();
+        rebuildMarkerDetails(true);
+        loadMarkerDetails();
         playPauseBtn.setImage(newImg);
     }
 
@@ -292,6 +398,7 @@ public class ActivePaneController implements Initializable {
         currentMarkers.clear();
         currentMarkers.addAll(testMarkers);
         currentMarkers.sort((m1, m2) -> m1.startTime().compareTo(m2.startTime()));
+        rebuildMarkerDetails(true);
     }
 
     private void clearCanvas() {
@@ -331,7 +438,7 @@ public class ActivePaneController implements Initializable {
             else endPos = drawPoint(context, marker, col);
             if(endPos < markerCutoff) {
                 currentMarkers.remove(marker);
-                invalidateMarkerDetails();
+                invalidateMarkerDetails(marker);
             }
         });
     }

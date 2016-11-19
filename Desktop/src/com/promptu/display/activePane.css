@@ -4,7 +4,7 @@
 }
 
 .controls {
-	-fx-background-color: #FF4A00;
+	-fx-background-color: #203046;
 }
 
 .roundedField {
@@ -17,24 +17,49 @@
 
 .marker {
     -fx-background-color: gray;
+    -fx-background-insets: 8px;
 }
 
 .marker_selected {
     -fx-background-color: orange;
+    -fx-background-insets: 8px;
 }
 
 .marker_0 {
     -fx-background-color: red;
+    -fx-background-insets: 8px;
 }
 
 .marker_1 {
     -fx-background-color: yellow;
+    -fx-background-insets: 8px;
 }
 
 .inplacetext {
     -fx-background-color: none;
 }
 
-.inplacetext:active {
-    -fx-background-color: green;
+
+/** file: slideout.css
+    place in same directory as SlideOut.java */
+
+.sidebar {
+    -fx-padding: 10 10 10 10;
+    -fx-background-insets: 0 10 0 0;
+    -fx-border-insets: 0 10 0 0;
+    -fx-background-color: linear-gradient(to bottom, derive(#203046, -10%), derive(#203046, 10%));
+    -fx-opacity: 0.9;
+    -fx-border-color: derive(#203046, -20%);
+    -fx-border-width: 4;
+}
+
+/** icons from: http://www.customicondesign.com (free for non-commercial use). */
+.hide-left {
+    /*-fx-graphic: url('http://www.veryicon.com/icon/64/Business/Pretty%20Office%205/Hide%20left.png');*/
+}
+.show-right {
+    /*-fx-graphic: url('http://www.veryicon.com/icon/64/Business/Pretty%20Office%205/Hide%20right.png');*/
+}
+.change-lyric {
+    /*-fx-graphic: url('http://www.veryicon.com/icon/64/Business/Pretty%20Office%205/Go%20into.png');*/
 }
