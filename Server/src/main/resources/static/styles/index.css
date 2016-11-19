@@ -22,3 +22,8 @@ body{
 .ui.small.image{
     width: 200px;
 }
+
+
+i.icon.download::before {
+    margin-left: 16px !important;
+}

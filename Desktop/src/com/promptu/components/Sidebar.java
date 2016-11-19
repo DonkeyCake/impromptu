@@ -27,6 +27,7 @@ public class Sidebar extends VBox {
         getStyleClass().add("sidebar");
         this.setPrefWidth(width);
         this.setMinWidth(0);
+        this.setVisible(false);
         setAlignment(Pos.CENTER);
         getChildren().addAll(children);
         controlButton = btn;

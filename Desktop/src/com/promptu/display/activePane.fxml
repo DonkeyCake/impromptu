@@ -99,19 +99,19 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="51.0" prefWidth="105.0" styleClass="title" text="promptu" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="25.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </Label>
             <TextField alignment="TOP_LEFT" prefHeight="25.0" prefWidth="185.0" promptText="Search for a song" styleClass="roundedField" GridPane.columnIndex="1" />
             <ImageView fx:id="hamburger" accessibleRole="BUTTON" fitHeight="55.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <image>
                   <Image url="@hamburger.png" />
                </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="8.0" />
+               </GridPane.margin>
             </ImageView>
          </children>
       </GridPane>
