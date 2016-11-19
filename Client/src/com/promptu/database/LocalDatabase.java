@@ -97,6 +97,7 @@ public class LocalDatabase {
         private Set<MarkerPoint> markers;
         private Set<Helper> helpers;
         private String fingerprintWaveform;
+        private long millis;
 
         public DataSet() {
             markers = new LinkedHashSet<>();
@@ -104,6 +105,7 @@ public class LocalDatabase {
             fingerprintWaveform = "";
             trackName = "";
             artist = "";
+            millis = 1000;
         }
 
         public String getTrackName() { return trackName; }
@@ -137,6 +139,14 @@ public class LocalDatabase {
         public DataSet importFromOther(DataSet other) {
             other.markers.forEach(this.markers::add);
             return this;
+        }
+
+        public void setMillis(long millis) {
+            this.millis = millis;
+        }
+
+        public long getMillis() {
+            return millis;
         }
     }
 
