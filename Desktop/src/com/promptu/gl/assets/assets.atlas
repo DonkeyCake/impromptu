@@ -1,0 +1,65 @@
+
+assets.png
+size: 1024,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+back
+  rotate: false
+  xy: 2, 44
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+blueBG
+  rotate: false
+  xy: 787, 468
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+hamburger
+  rotate: false
+  xy: 689, 373
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 2, 142
+  size: 685, 327
+  orig: 685, 327
+  offset: 0, 0
+  index: -1
+pause
+  rotate: false
+  xy: 100, 44
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+play
+  rotate: false
+  xy: 689, 275
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+textField
+  rotate: false
+  xy: 2, 2
+  size: 80, 40
+  split: 14, 14, 14, 14
+  orig: 80, 40
+  offset: 0, 0
+  index: -1
+whiteBG
+  rotate: false
+  xy: 198, 139
+  size: 1, 1
+  split: 0, 0, 0, 0
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

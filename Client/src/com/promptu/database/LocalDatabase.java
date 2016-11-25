@@ -98,6 +98,7 @@ public class LocalDatabase {
         private Set<Helper> helpers;
         private String fingerprintWaveform;
         private long millis;
+        private String trackPath;
 
         public DataSet() {
             markers = new LinkedHashSet<>();
@@ -105,6 +106,7 @@ public class LocalDatabase {
             fingerprintWaveform = "";
             trackName = "";
             artist = "";
+            trackPath = "";
             millis = 1000;
         }
 
@@ -147,6 +149,14 @@ public class LocalDatabase {
 
         public long getMillis() {
             return millis;
+        }
+
+        public String getTrackPath() {
+            return trackPath;
+        }
+
+        public void setTrackPath(String trackPath) {
+            this.trackPath = trackPath;
         }
     }
 
