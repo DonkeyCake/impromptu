@@ -1,25 +1,32 @@
 package com.promptu.event.events;
 
-import com.promptu.database.LocalDatabase;
 import com.promptu.event.AbstractEvent;
 import com.promptu.event.Subscribe;
 
 /**
- * Created by Guy on 24/11/2016.
+ * Created by Guy on 25/11/2016.
  */
 public class TrackSelectedEvent extends AbstractEvent {
 
-    public LocalDatabase.DataSet dataSet;
+    public String trackPath = "";
 
-    public TrackSelectedEvent() { this(null); }
-    public TrackSelectedEvent(LocalDatabase.DataSet dataSet) { this.dataSet = dataSet; }
+    public TrackSelectedEvent() {}
 
-    public LocalDatabase.DataSet getDataSet() { return dataSet; }
-    public void setDataSet(LocalDatabase.DataSet dataSet) { this.dataSet = dataSet; }
+    public TrackSelectedEvent(String trackPath) {
+        this.trackPath = trackPath;
+    }
+
+    public String getTrackPath() {
+        return trackPath;
+    }
+
+    public void setTrackPath(String trackPath) {
+        this.trackPath = trackPath;
+    }
 
     public static interface TrackSelectedListener {
         @Subscribe
-        void onTrackSelected(Object source, TrackSelectedEvent event);
+        public void onTrackSelected(Object source, TrackSelectedEvent event);
     }
 
 }

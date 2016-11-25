@@ -2,10 +2,9 @@ package com.promptu.event;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class EventBus {
@@ -61,6 +60,8 @@ public class EventBus {
     }
 
     public void post(final Object source, final AbstractEvent event) {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        System.out.printf("[%s] Firing event %s [%s] from %s [%s]\n", dateFormat.format(new Date()), event.getClass().getSimpleName(), event.toString(), source.getClass().getSimpleName(), source.toString());
         postTask(() -> {
             final Class eventType = event.getClass();
             if(eventSubscribers.containsKey(eventType)) {

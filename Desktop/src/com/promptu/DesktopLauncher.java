@@ -1,10 +1,14 @@
 package com.promptu;
 
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3WindowAdapter;
+import com.promptu.concurrency.AtomicFloat;
 import com.promptu.event.events.CloseRequestEvent;
 import com.promptu.gl.GLLauncher;
+import com.promptu.tween.AtomicFloatTweenAccessor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,6 +30,10 @@ public class DesktopLauncher extends Application {
             if(args[i].equalsIgnoreCase("--scale")) handleScreenScale(args, i);
             if(args[i].equalsIgnoreCase("-s")) handleScreenScale(args, i);
         }
+
+        tweenManager = new TweenManager();
+        Tween.registerAccessor(AtomicFloat.class, new AtomicFloatTweenAccessor());
+
         if(useOpenGL) startGL(args);
         else startFX(args);
     }
@@ -38,6 +46,8 @@ public class DesktopLauncher extends Application {
             screenScale = v;
         }catch (Exception ignored) {}
     }
+
+    public static TweenManager tweenManager;
 
     private static float screenScale = 0.75f;
 

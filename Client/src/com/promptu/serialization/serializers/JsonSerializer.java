@@ -2,11 +2,10 @@ package com.promptu.serialization.serializers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.promptu.database.MarkerBlock;
 import com.promptu.database.MarkerPoint;
-import com.promptu.database.MarkerType;
 import com.promptu.serialization.FileSerializer;
 import com.promptu.serialization.adapters.json.MarkerAdapter;
-import com.sun.xml.internal.bind.api.impl.NameConverter;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,7 +24,7 @@ public class JsonSerializer implements FileSerializer {
     public JsonSerializer(boolean pretty) {
         GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(MarkerPoint.class, new MarkerAdapter());
-        builder.registerTypeAdapter(MarkerType.class, new MarkerAdapter());
+        builder.registerTypeAdapter(MarkerBlock.class, new MarkerAdapter());
         if(pretty)
             builder.setPrettyPrinting();
         gson = builder.create();

@@ -19,6 +19,6 @@ public class PlayerBodySummary extends VisTable {
         setBackground(Assets.getInstance().getPatchDrawable(Assets.Refs.WHITEBG));
 
         add(new SummaryTrackDetails()).growX();
-        add(new WaveformSummary()).growX();
+        add(new WaveformSummary()).grow();
     }
 }

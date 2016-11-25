@@ -26,6 +26,7 @@ public class Assets extends AtlasBase<Assets.Refs> {
         PAUSE("pause"),
         BACK("back"),
         TEXTFIELD("textField"),
+        DELETE("delete"),
         ;
 
         public final String ref;

@@ -97,7 +97,7 @@ public class LocalDatabase {
         private Set<MarkerPoint> markers;
         private Set<Helper> helpers;
         private String fingerprintWaveform;
-        private long millis;
+        private float duration;
         private String trackPath;
 
         public DataSet() {
@@ -107,7 +107,7 @@ public class LocalDatabase {
             trackName = "";
             artist = "";
             trackPath = "";
-            millis = 1000;
+            duration = 1000;
         }
 
         public String getTrackName() { return trackName; }
@@ -143,12 +143,12 @@ public class LocalDatabase {
             return this;
         }
 
-        public void setMillis(long millis) {
-            this.millis = millis;
+        public void setDuration(float duration) {
+            this.duration = duration;
         }
 
-        public long getMillis() {
-            return millis;
+        public float getDuration() {
+            return duration;
         }
 
         public String getTrackPath() {
@@ -158,6 +158,17 @@ public class LocalDatabase {
         public void setTrackPath(String trackPath) {
             this.trackPath = trackPath;
         }
+
+        public void prepare() {
+            fingerprintWaveform = normalize(fingerprintWaveform);
+            trackPath = normalize(trackPath);
+        }
+
+        private static String normalize(String path) {
+            File base = new File("./");
+            return base.toURI().relativize(new File(path).toURI()).getPath();
+        }
+
     }
 
 }

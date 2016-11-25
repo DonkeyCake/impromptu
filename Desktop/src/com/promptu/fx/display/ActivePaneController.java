@@ -37,6 +37,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.promptu.DesktopLauncher.tweenManager;
+
 /**
  * Created by Guy on 18/11/2016.
  */
@@ -123,8 +125,8 @@ public class ActivePaneController implements Initializable {
     public void setDuration(int seconds) {
         duration = (long) (seconds * 1000);
     }
-    public void setMillis(long millis) {
-        duration = millis;
+    public void setMillis(float millis) {
+        duration = (long) millis;
     }
 
     public void setWaveform(String url) {
@@ -142,7 +144,7 @@ public class ActivePaneController implements Initializable {
             LocalDatabase.DataSet set = new LocalDatabase.DataSet();
             set.setTrackName(titleLbl.getText());
             set.setArtist(artistLbl.getText());
-            set.setMillis(duration);
+            set.setDuration(duration);
             set.setFingerprintWaveform(waveformUrl);
             set.getMarkers().addAll(testMarkers);
             SerializationManager.instance().toFile(file.toPath(), set);
@@ -157,7 +159,7 @@ public class ActivePaneController implements Initializable {
                 testMarkers.clear();
                 titleLbl.setText(set.getTrackName());
                 artistLbl.setText(set.getArtist());
-                setMillis(set.getMillis());
+                setMillis(set.getDuration());
                 String waveform = set.getFingerprintWaveform();
                 setWaveform(waveform);
                 set.getMarkers().forEach(m -> {
@@ -510,6 +512,7 @@ public class ActivePaneController implements Initializable {
         }else{
             delta = 16;
         }
+        tweenManager.update(((float) delta)/1000.0f);
         if(isPlaying) current += delta;
         else{
             current = (long) ((-currentX / getCanvasWidth())*duration);

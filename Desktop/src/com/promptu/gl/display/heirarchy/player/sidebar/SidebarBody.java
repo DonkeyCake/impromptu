@@ -9,10 +9,10 @@ import com.kotcrab.vis.ui.widget.file.FileChooser;
 import com.kotcrab.vis.ui.widget.file.FileChooserAdapter;
 import com.kotcrab.vis.ui.widget.file.FileChooserListener;
 import com.promptu.database.LocalDatabase;
-import com.promptu.event.events.TrackSelectedEvent;
-import com.promptu.gl.GLLauncher;
+import com.promptu.event.events.ProjectSelectedEvent;
 import com.promptu.gl.display.skin.SkinManager;
 import com.promptu.helpers.LambdaClassListener;
+import com.promptu.project.ProjectManager;
 import com.promptu.serialization.SerializationManager;
 
 import java.io.File;
@@ -26,14 +26,14 @@ public class SidebarBody extends VisTable {
     FileChooser fileChooser;
     FileChooserListener openListener;
     FileChooserListener saveListener;
-    TrackSelectedEvent trackSelectedEvent;
+    ProjectSelectedEvent projectSelectedEvent;
 
     public SidebarBody() {
         super(false);
         fileChooser = new FileChooser(FileChooser.Mode.OPEN);
         fileChooser.setDirectory(new File("./"));
         fileChooser.setMultiSelectionEnabled(false);
-        trackSelectedEvent = new TrackSelectedEvent();
+        projectSelectedEvent = new ProjectSelectedEvent();
         openListener = new FileChooserAdapter() {
             @Override public void canceled() {}
 
@@ -43,8 +43,8 @@ public class SidebarBody extends VisTable {
                 FileHandle first = files.first();
                 try {
                     LocalDatabase.DataSet dataSet = SerializationManager.instance().fromFile(first.file().toPath(), LocalDatabase.DataSet.class);
-                    trackSelectedEvent.setDataSet(dataSet);
-                    trackSelectedEvent.fire(SidebarBody.this);
+                    projectSelectedEvent.setDataSet(dataSet);
+                    projectSelectedEvent.fire(SidebarBody.this);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -55,21 +55,31 @@ public class SidebarBody extends VisTable {
 
             @Override
             public void selected(Array<FileHandle> files) {
-                if(files.items.length <= 0) return;
+                if(files.size <= 0) return;
                 FileHandle first = files.first();
-                SerializationManager.instance().toFile(first.file().toPath(), GLLauncher.instance().dataSet);
+                LocalDatabase.DataSet set = ProjectManager.instance().dataSet;
+                set.prepare();
+                SerializationManager.instance().toFile(first.file().toPath(), set);
             }
         };
         init();
     }
 
     private void init() {
-        TextButton loadBtn = new TextButton("Load", SkinManager.instance().visX1);
-        TextButton saveBtn = new TextButton("Save", SkinManager.instance().visX1);
 
+        TextButton newBtn = new TextButton("New project", SkinManager.instance().visX1);
+        TextButton trackBtn = new TextButton("Select audio track", SkinManager.instance().visX1);
+
+        TextButton loadBtn = new TextButton("Load project", SkinManager.instance().visX1);
+        TextButton saveBtn = new TextButton("Save project", SkinManager.instance().visX1);
+
+        newBtn.addListener(new LambdaClassListener(this::newProject));
+        trackBtn.addListener(new LambdaClassListener(this::selectTrack));
         loadBtn.addListener(new LambdaClassListener(this::load));
         saveBtn.addListener(new LambdaClassListener(this::save));
 
+        add(newBtn).growX().pad(0, 2, 4, 2).row();
+        add(trackBtn).growX().pad(0, 2, 16, 2).row();
         add(loadBtn).growX().pad(0, 2, 4, 2).row();
         add(saveBtn).growX().pad(0, 2, 4, 2).row();
     }
@@ -77,6 +87,7 @@ public class SidebarBody extends VisTable {
 
     public void load(InputEvent event, float x, float y) { load(); }
     public void load() {
+        fileChooser.setSelectionMode(FileChooser.SelectionMode.FILES);
         fileChooser.setMode(FileChooser.Mode.OPEN);
         fileChooser.setListener(openListener);
         getStage().addActor(fileChooser.fadeIn());
@@ -84,8 +95,34 @@ public class SidebarBody extends VisTable {
 
     public void save(InputEvent event, float x, float y) { save(); }
     public void save() {
+        fileChooser.setSelectionMode(FileChooser.SelectionMode.FILES);
         fileChooser.setMode(FileChooser.Mode.SAVE);
         fileChooser.setListener(saveListener);
+        getStage().addActor(fileChooser.fadeIn());
+    }
+
+    public void selectTrack(InputEvent event, float x, float y) { selectTrack(); }
+    public void selectTrack() {
+        getStage().addActor(ProjectManager.instance().getMusicTrackChooser().fadeIn());
+    }
+
+    public void newProject(InputEvent event, float x, float y) { newProject(); }
+    public void newProject() {
+        fileChooser.setSelectionMode(FileChooser.SelectionMode.DIRECTORIES);
+        fileChooser.setMode(FileChooser.Mode.OPEN);
+        fileChooser.setListener(new FileChooserAdapter(){
+            @Override
+            public void selected(Array<FileHandle> files) {
+                if(files.size <= 0) return;
+                FileHandle first = files.first();
+                File f = first.file();
+                ProjectManager pm = ProjectManager.instance();
+                if(pm.projectPath.length() > 0 && pm.dataSet != null)
+                    SerializationManager.instance().toFile(new File(pm.projectPath).toPath(), pm.dataSet);
+                pm.projectPath = f.getPath();
+                pm.dataSet = new LocalDatabase.DataSet();
+            }
+        });
         getStage().addActor(fileChooser.fadeIn());
     }
 

@@ -13,15 +13,22 @@ back
   index: -1
 blueBG
   rotate: false
-  xy: 787, 468
+  xy: 198, 139
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1
   offset: 0, 0
   index: -1
-hamburger
+delete
   rotate: false
   xy: 689, 373
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+hamburger
+  rotate: false
+  xy: 100, 44
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
@@ -35,14 +42,14 @@ logo
   index: -1
 pause
   rotate: false
-  xy: 100, 44
+  xy: 689, 275
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 play
   rotate: false
-  xy: 689, 275
+  xy: 787, 373
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
@@ -57,7 +64,7 @@ textField
   index: -1
 whiteBG
   rotate: false
-  xy: 198, 139
+  xy: 689, 272
   size: 1, 1
   split: 0, 0, 0, 0
   orig: 1, 1

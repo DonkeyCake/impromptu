@@ -1,7 +1,7 @@
 name=assets
 filename=assets.atlas
-input=raw
-output=
+input=./raw
+output=./
 
 alias=false
 alphaThreshold=5
@@ -32,8 +32,8 @@ wrapY=ClampToEdge
 
 name=cursors
 filename=cursors.atlas
-input=cursors
-output=
+input=./cursors
+output=./
 
 alias=true
 alphaThreshold=0
