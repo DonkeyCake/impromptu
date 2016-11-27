@@ -18,6 +18,7 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
     public MarkerDisplay() {
         super(false);
         EventBus.getInstance().register(this);
+        setFillParent(true);
         init();
     }
 
@@ -37,6 +38,7 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
         clearChildren();
         if(this.dataSet != null)
             this.dataSet.getMarkers().forEach(this::addMarkerToTable);
+        add().grow().row();
     }
 
     private void addMarkerToTable(MarkerPoint marker) {

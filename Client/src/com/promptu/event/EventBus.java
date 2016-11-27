@@ -31,6 +31,10 @@ public class EventBus {
         eventTasks.add(task);
     }
 
+    public void postImmediate(final Object source, final AbstractEvent event) {
+        fireRelatedEvents(source, event);
+    }
+
     private void addSubscriber(Class<? extends AbstractEvent> event, Object subscriber, Method method) {
         if(!eventSubscribers.containsKey(event))
             eventSubscribers.put(event, new ArrayList<>());
@@ -62,19 +66,22 @@ public class EventBus {
     public void post(final Object source, final AbstractEvent event) {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
         System.out.printf("[%s] Firing event %s [%s] from %s [%s]\n", dateFormat.format(new Date()), event.getClass().getSimpleName(), event.toString(), source.getClass().getSimpleName(), source.toString());
-        postTask(() -> {
-            final Class eventType = event.getClass();
-            if(eventSubscribers.containsKey(eventType)) {
-                eventSubscribers.get(eventType).forEach(entry -> {
-                    try{
-                        entry.getValue().invoke(entry.getKey(), source, event);
-                    }catch (IllegalAccessException | InvocationTargetException e) {
-                        e.printStackTrace();
-                    }
-                });
-            }
-        });
+        postTask(() -> fireRelatedEvents(source, event));
     }
+
+    private void fireRelatedEvents(final Object src, final AbstractEvent event) {
+        final Class eventType = event.getClass();
+        if(eventSubscribers.containsKey(eventType)) {
+            eventSubscribers.get(eventType).forEach(entry -> {
+                try{
+                    entry.getValue().invoke(entry.getKey(), src, event);
+                }catch (IllegalAccessException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
 
     private boolean isSubscriber(Method method) {
         if(method.getParameterCount() < 2) return false;

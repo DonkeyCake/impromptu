@@ -7,11 +7,12 @@ import com.promptu.event.EventBus;
 import com.promptu.gl.assets.Assets;
 import com.promptu.gl.display.heirarchy.player.sidebar.SidebarBody;
 import com.promptu.gl.events.SidebarToggleEvent;
+import com.promptu.render.effect.drop.DropShadowRenderer;
 
 /**
  * Created by Guy on 24/11/2016.
  */
-public class RootSidebar extends VisTable implements SidebarToggleEvent.SidebarToggleListener {
+public class RootSidebar extends VisTable implements SidebarToggleEvent.SidebarToggleListener, DropShadowRenderer.DropShadow {
 
     public boolean isShown = false;
     public Vector2 size;

@@ -9,4 +9,8 @@ public class AbstractEvent {
         EventBus.getInstance().post(source, this);
     }
 
+    public void fireImmediate(final Object source) {
+        EventBus.getInstance().postImmediate(source, this);
+    }
+
 }

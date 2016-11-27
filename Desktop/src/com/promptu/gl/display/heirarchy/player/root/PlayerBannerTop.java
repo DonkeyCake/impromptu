@@ -10,11 +10,12 @@ import com.promptu.gl.assets.Assets;
 import com.promptu.gl.assets.Cursors;
 import com.promptu.gl.events.SidebarToggleEvent;
 import com.promptu.helpers.LambdaClassListener;
+import com.promptu.render.effect.drop.DropShadowRenderer;
 
 /**
  * Created by Guy on 24/11/2016.
  */
-public class PlayerBannerTop extends VisTable {
+public class PlayerBannerTop extends VisTable implements DropShadowRenderer.DropShadow {
 
     SidebarToggleEvent sidebarToggleEvent;
 

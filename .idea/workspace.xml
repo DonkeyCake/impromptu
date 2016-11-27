@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c917fb82-f1d9-45c2-9fc9-63f5337aecab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/raw/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/events/ClientInitializationEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/events/ProjectSelectedEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/events/ShareReferenceEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/src/com/promptu/tween/AtomicFloatTweenAccessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Core/src/com/promptu/concurrency/AtomicFloat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/ui/InPlaceTextEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/project/ProjectManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assets.png" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assets.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/cursors.png" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/cursors.png" />
+    <list default="true" id="c917fb82-f1d9-45c2-9fc9-63f5337aecab" name="Default" comment="Drop shadow effect renderer is in (with minimal performance hit), was only slightly painful.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/events/MarkerSwitchEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/EffectScaleChangeEvent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/EffectRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/DropShadowRenderer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.vert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.vert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.vert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.frag" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.vert" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/utils/BlurUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/utils/GLUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/utils/ScreenshotUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Desktop.jar" afterPath="$PROJECT_DIR$/build/Desktop.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.iml" afterPath="$PROJECT_DIR$/Client/Client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/com/promptu/database/LocalDatabase.java" afterPath="$PROJECT_DIR$/Client/src/com/promptu/database/LocalDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/com/promptu/event/AbstractEvent.java" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/AbstractEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/com/promptu/event/events/TrackSelectedEvent.java" afterPath="$PROJECT_DIR$/Client/src/com/promptu/event/events/TrackSelectedEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/src/com/promptu/serialization/serializers/JsonSerializer.java" afterPath="$PROJECT_DIR$/Client/src/com/promptu/serialization/serializers/JsonSerializer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/fx/display/ActivePaneController.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/fx/display/ActivePaneController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/Assets.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assets.atlas" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assets.atlas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assetsCursors.pckPRoj" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assetsCursors.pckPRoj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBody.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBody.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/PlayerBodySummary.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/PlayerBodySummary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/SummaryTrackDetails.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/SummaryTrackDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/WaveformSummary.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/WaveformSummary.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/sidebar/SidebarBody.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/sidebar/SidebarBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/RootSidebar.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/RootSidebar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerTop.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerTop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java" afterPath="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Server/.gradle/" />
@@ -67,136 +62,146 @@
     <favorites_list name="Promptu" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DesktopLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WaveformCore.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MarkerDisplay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerBody.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBody.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GLLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MarkerElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1769#1770#0" expanded="true" />
-                <element signature="e#1815#1816#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Value.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/ui/Value.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-              <folding>
-                <element signature="e#1304#1495#0" expanded="true" />
-                <element signature="e#1494#1495#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InPlaceTextEditor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/ui/InPlaceTextEditor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="46" column="46" lean-forward="true" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1246#1531#0" expanded="true" />
-                <element signature="e#1530#1531#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="DropShadowRenderer.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/DropShadowRenderer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="397">
+                  <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EffectRenderer.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/EffectRenderer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="247">
+                  <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="EffectScaleChangeEvent.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/EffectScaleChangeEvent.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#338#339#0" expanded="true" />
+                    <element signature="e#378#379#0" expanded="true" />
+                    <element signature="e#412#413#0" expanded="true" />
+                    <element signature="e#443#444#0" expanded="true" />
+                    <element signature="e#490#491#0" expanded="true" />
+                    <element signature="e#530#531#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="blur.vert" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.vert">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="expand.frag" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.frag">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="317">
+                  <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="expand.vert" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.vert">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="drop.vert" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.vert">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="drop.frag" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.frag">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="486">
+                  <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="blur.frag" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.frag">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="460">
+                  <caret line="71" column="71" lean-forward="true" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="apply.vert" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.vert">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="BlurUtils.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/utils/BlurUtils.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-110">
+                  <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="GLSL Shader" />
         <option value="Class" />
       </list>
     </option>
@@ -212,7 +217,12 @@
       <find>Thread</find>
       <find>contin</find>
       <find>delta</find>
+      <find>emissive</find>
+      <find>u_mask</find>
     </findStrings>
+    <replaceStrings>
+      <replace>u_texture</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -793,36 +803,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/VisUI/uiskin.atlas" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/VisUI/uiskin.json" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/utils/ClasspathUtils.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/helpers/LambdaClassListener.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/Summary.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/PlayerBodySummaryTrackDetails.java" />
-        <option value="$PROJECT_DIR$/Core/src/com/promptu/event/EventBus.java" />
-        <option value="$PROJECT_DIR$/Core/src/com/promptu/event/events/TrackSelectedEvent.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/PlayerRoot.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLFXFileSelector.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/WaveformCore.java" />
-        <option value="$PROJECT_DIR$/Core/src/com/promptu/audio.AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/Core/src/com/promptu/audio/AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/SidebarEvent.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/SidebarToggleEvent.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerTop.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/RootSidebar.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/skin/SkinManager.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/utils/SpriteCache.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/utils/TextureCache.java" />
-        <option value="$PROJECT_DIR$/Client/src/com/promptu/event/events/CloseRequestEvent.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/audio/AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/Client/src/com/promptu/serialization/serializers/JsonSerializer.java" />
         <option value="$PROJECT_DIR$/Client/src/com/promptu/event/events/ClientInitializationEvent.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/SummaryTrackDetails.java" />
         <option value="$PROJECT_DIR$/Client/src/com/promptu/event/events/ProjectSelectedEvent.java" />
         <option value="$PROJECT_DIR$/Client/src/com/promptu/event/events/TrackSelectedEvent.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/project/ProjectManager.java" />
-        <option value="$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/sidebar/SidebarBody.java" />
         <option value="$PROJECT_DIR$/Client/src/com/promptu/database/LocalDatabase.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/PlayerBodySummary.java" />
@@ -833,17 +818,42 @@
         <option value="$PROJECT_DIR$/Client/src/com/promptu/tween/AtomicFloatTweenAccessor.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/fx/display/ActivePaneController.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/ui/InPlaceEditor.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/Assets.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBody.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/assets/assetsCursors.pckPRoj" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/ui/InPlaceTextEditor.java" />
-        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java" />
         <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/promptu/event/events/MarkerSwitchEvent.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/EffectRenderer.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/DropShadowRenderer.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/drop/DropShadowRenderer.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerTop.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.vert" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.vert" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.verft.glsl" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.frag" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.frag" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/utils/BlurUrils.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/utils/BlurUtils.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/utils/ScreenshotUtils.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/utils/GLUtils.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.frag" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/RootSidebar.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/EffectScaleEvent.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/promptu/event/AbstractEvent.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/EffectScaleChangeEvent.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.vert" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/EffectRenderer.java" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.frag" />
+        <option value="$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/DropShadowRenderer.java" />
       </list>
     </option>
   </component>
@@ -875,187 +885,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heirarchy.player" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="display" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="heirarchy.player" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="root" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Promptu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImPromptU" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1203,6 +1032,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="effect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="effect" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1286,6 +1171,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1853,6 +1768,187 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="display" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="display" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heirarchy.player" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="display" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heirarchy.player" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="root" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Desktop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Promptu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ImPromptU" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1866,17 +1962,18 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Client/libs/tween-engine-api.jar!/" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="SearchEverywhereHistoryKey" value="PlayerBannerBo&#9;FILE&#9;file://J:/Development/Promptu/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java&#10;EventBus&#9;FILE&#9;file://J:/Development/Promptu/Client/src/com/promptu/event/EventBus.java&#10;Serial&#9;PSI&#9;JAVA://com.promptu.serialization.SerializationManager&#10;OpenAlA&#9;FILE&#9;jar://J:/Development/Promptu/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALAudio.class&#10;OpenAL&#9;FILE&#9;jar://J:/Development/Promptu/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALMusic.class&#10;EventB&#9;PSI&#9;JAVA://com.promptu.event.EventBus&#10;Lwjgl3F&#9;PSI&#9;JAVA://com.badlogic.gdx.backends.lwjgl3.Lwjgl3FileHandle&#10;Event&#9;FILE&#9;file://J:/Development/Promptu/Client/src/com/promptu/event/events/TrackSelectedEvent.java&#10;List.class&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_66/jre/lib/rt.jar!/java/util/List.class" />
+    <property name="SearchEverywhereHistoryKey" value="BlurU&#9;FILE&#9;file://J:/Development/Promptu/Desktop/src/com/promptu/utils/BlurUtils.java&#10;eventBus&#9;PSI&#9;JAVA://com.promptu.event.EventBus&#10;apply.frag&#9;FILE&#9;file://J:/Development/Promptu/Desktop/src/com/promptu/render/effect/drop/apply.frag&#10;PlayerBannerBo&#9;FILE&#9;file://J:/Development/Promptu/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java&#10;EventBus&#9;FILE&#9;file://J:/Development/Promptu/Client/src/com/promptu/event/EventBus.java&#10;Serial&#9;PSI&#9;JAVA://com.promptu.serialization.SerializationManager&#10;OpenAlA&#9;FILE&#9;jar://J:/Development/Promptu/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALAudio.class&#10;OpenAL&#9;FILE&#9;jar://J:/Development/Promptu/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALMusic.class&#10;EventB&#9;PSI&#9;JAVA://com.promptu.event.EventBus&#10;Lwjgl3F&#9;PSI&#9;JAVA://com.badlogic.gdx.backends.lwjgl3.Lwjgl3FileHandle&#10;Event&#9;FILE&#9;file://J:/Development/Promptu/Client/src/com/promptu/event/events/TrackSelectedEvent.java&#10;List.class&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_66/jre/lib/rt.jar!/java/util/List.class" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Core/src/com/promptu" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="J:\Development\Promptu\Desktop\src\com\promptu\render\effect\drop" />
+      <recent name="J:\Development\Promptu\Desktop\src\com\promptu\gl\assets\raw" />
+      <recent name="J:\Development\Promptu\Desktop\src\com\promptu\gl\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="J:\Development\Promptu\Desktop\src\com\promptu\fx\display" />
       <recent name="J:\Development\Promptu\Desktop\libs" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="J:\Development\Promptu\Desktop\src\com\promptu\gl\assets\raw" />
-      <recent name="J:\Development\Promptu\Desktop\src\com\promptu\gl\assets" />
     </key>
   </component>
   <component name="RunManager" selected="Application.DesktopLauncher">
@@ -2238,7 +2335,8 @@
       <workItem from="1480021522811" duration="31000" />
       <workItem from="1480021801234" duration="13207000" />
       <workItem from="1480069634346" duration="9246000" />
-      <workItem from="1480082226771" duration="6287000" />
+      <workItem from="1480082226771" duration="7526000" />
+      <workItem from="1480163164280" duration="19491000" />
     </task>
     <task id="LOCAL-00001" summary="Implementation of GL rendering">
       <created>1480034751379</created>
@@ -2247,11 +2345,25 @@
       <option name="project" value="LOCAL" />
       <updated>1480034751379</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="More GL UI work">
+      <created>1480089246172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480089246172</updated>
+    </task>
+    <task id="LOCAL-00003" summary="More GL UI work">
+      <created>1480089260663</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480089260663</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43592000" />
+    <option name="totallyTimeSpent" value="64322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1096" extended-state="6" />
@@ -2272,7 +2384,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31152648" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35825545" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2283,7 +2395,8 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1609698" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16216215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2299,11 +2412,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implementation of GL rendering" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation of GL rendering" />
+    <MESSAGE value="More GL UI work" />
+    <MESSAGE value="Drop shadow effect renderer is in (with minimal performance hit), was only slightly painful." />
+    <option name="LAST_COMMIT_MESSAGE" value="Drop shadow effect renderer is in (with minimal performance hit), was only slightly painful." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="73" />
+      <option name="time" value="77" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2312,234 +2427,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/audio/Music.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALSound.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/Lwjgl3WindowAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/Gdx.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/audio/AudioPlayer.java" />
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALMusic.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="295" column="0" lean-forward="true" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/audio/OpenALAudio.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/utils/TextureCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/fx/display/activePane.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/PlayerRoot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/src/com/promptu/database/MarkerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/serialization/adapters/json/MarkerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/CloseRequestEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/ClientInitializationEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/TogglePlaybackEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/serialization/serializers/JsonSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/serialization/SerializationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding>
-            <element signature="e#652#653#0" expanded="false" />
-            <element signature="e#696#697#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/summary/SummaryTrackDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/TrackSelectedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#329#330#0" expanded="false" />
-            <element signature="e#371#372#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#489#490#0" expanded="false" />
-            <element signature="e#531#532#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="73" column="19" lean-forward="true" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/project/ProjectManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/sidebar/SidebarBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4170#4171#0" expanded="false" />
-            <element signature="e#4264#4265#0" expanded="false" />
-            <element signature="e#4540#5148#0" expanded="false" />
-            <element signature="e#5147#5148#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/ProjectSelectedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/PlayerBodySummary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/utils/ActorGestureListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1417">
-          <caret line="120" column="5" lean-forward="false" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/database/LocalDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="102" column="26" lean-forward="false" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
-          <folding>
-            <element signature="e#4551#4552#0" expanded="false" />
-            <element signature="e#4599#4600#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/InputListener.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2548,7 +2439,7 @@
         <state relative-caret-position="338">
           <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="e#326#327#0" expanded="false" />
             <element signature="e#364#365#0" expanded="false" />
             <element signature="e#416#417#0" expanded="false" />
@@ -2582,9 +2473,9 @@
         <state relative-caret-position="273">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#498#499#0" expanded="false" />
+            <element signature="e#538#539#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2594,7 +2485,7 @@
         <state relative-caret-position="130">
           <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2603,7 +2494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="154" column="16" lean-forward="false" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2623,19 +2513,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/ui/Table.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2643,7 +2524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="574" column="19" lean-forward="false" selection-start-line="574" selection-start-column="19" selection-end-line="574" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2651,7 +2531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2659,15 +2538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/Actor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="444" column="16" lean-forward="false" selection-start-line="444" selection-start-column="16" selection-end-line="444" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2675,71 +2545,266 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/ui/Value.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="260">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding>
-            <element signature="e#1304#1495#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1769#1770#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/ui/InPlaceTextEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="46" column="46" lean-forward="true" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+        <state relative-caret-position="416">
+          <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1246#1531#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="false" />
+            <element signature="e#612#613#0" expanded="false" />
+            <element signature="e#918#1127#0" expanded="false" />
+            <element signature="e#1126#1127#0" expanded="false" />
+            <element signature="e#1555#1976#0" expanded="false" />
+            <element signature="e#1975#1976#0" expanded="false" />
+            <element signature="e#2607#2608#0" expanded="false" />
+            <element signature="e#2639#2640#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBody.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="299">
+          <caret line="23" column="71" lean-forward="true" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="42" column="33" lean-forward="true" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/events/MarkerSwitchEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/marker/MarkerElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/MarkerDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/scenes/scene2d/Actor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/graphics/g2d/CpuSpriteBatch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding>
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerTop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="17" column="80" lean-forward="false" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/PlayerBannerBottom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.verft.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/graphics/glutils/ShaderProgram.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="274" column="16" lean-forward="false" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/utils/ScreenshotUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/GLLauncher.java">
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/graphics/glutils/FrameBuffer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="286">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/utils/ScreenUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/RootSidebar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="14" column="124" lean-forward="false" selection-start-line="14" selection-start-column="124" selection-end-line="14" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/utils/GLUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar!/com/badlogic/gdx/backends/lwjgl3/Lwjgl3WindowAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding>
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="71" column="51" lean-forward="true" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/AbstractEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/com/promptu/event/EventBus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="79" column="15" lean-forward="false" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+          <folding>
+            <element signature="e#1033#1034#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/utils/BlurUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2748,34 +2813,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/PlayerScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="534">
+          <caret line="66" column="27" lean-forward="false" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/AbstractScreen.java">
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/apply.vert">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/DesktopLauncher.java">
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/drop.frag">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="45" column="28" lean-forward="true" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        <state relative-caret-position="486">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/expand.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/events/EffectScaleChangeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/blur.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="71" column="71" lean-forward="true" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/EffectRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/gl/display/heirarchy/player/root/body/WaveformCore.java">
+    <entry file="file://$PROJECT_DIR$/Desktop/src/com/promptu/render/effect/drop/DropShadowRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="139" column="24" lean-forward="true" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
+        <state relative-caret-position="397">
+          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

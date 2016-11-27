@@ -29,8 +29,8 @@ public class MarkerElement extends VisTable {
     }
 
     private void init() {
-        headerTxt = new InPlaceTextEditor("Title");
-        bodyTxt = new InPlaceTextEditor("Content");
+        headerTxt = new InPlaceTextEditor(this.marker.header());
+        bodyTxt = new InPlaceTextEditor(this.marker.text());
 
         float baseSize = 16;
         float headerSize = baseSize*2;

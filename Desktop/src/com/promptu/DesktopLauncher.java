@@ -69,10 +69,11 @@ public class DesktopLauncher extends Application {
         cfg.setWindowListener(new Lwjgl3WindowAdapter(){
             @Override
             public boolean closeRequested() {
-                new CloseRequestEvent().fire(this);
+                new CloseRequestEvent().fireImmediate(this);
                 return super.closeRequested();
             }
         });
+        cfg.useVsync(false);
         cfg.setTitle("Promptu");
         cfg.setWindowedMode(width, height);
         new Lwjgl3Application(new GLLauncher(), cfg);

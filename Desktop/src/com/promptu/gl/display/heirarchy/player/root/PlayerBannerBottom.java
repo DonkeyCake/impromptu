@@ -11,13 +11,14 @@ import com.promptu.event.events.TogglePlaybackEvent;
 import com.promptu.gl.assets.Assets;
 import com.promptu.gl.assets.Cursors;
 import com.promptu.helpers.LambdaClassListener;
+import com.promptu.render.effect.drop.DropShadowRenderer;
 
 import static com.promptu.event.events.TogglePlaybackEvent.PlaybackState.*;
 
 /**
  * Created by Guy on 24/11/2016.
  */
-public class PlayerBannerBottom extends VisTable implements TogglePlaybackEvent.TogglePlaybackListener {
+public class PlayerBannerBottom extends VisTable implements DropShadowRenderer.DropShadow, TogglePlaybackEvent.TogglePlaybackListener {
 
     private boolean isPlaying;
     private TogglePlaybackEvent togglePlaybackEvent;
@@ -94,7 +95,5 @@ public class PlayerBannerBottom extends VisTable implements TogglePlaybackEvent.
             }
         });
     }
-
-
 
 }
