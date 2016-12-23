@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.promptu.render.effect.EffectRenderer;
+import com.promptu.render.effect.shaders.PingPongBlurShader;
 import com.promptu.utils.ClasspathUtils;
 import com.promptu.utils.GLUtils;
 import com.promptu.utils.ScreenshotUtils;
@@ -52,6 +53,7 @@ public class DropShadowRenderer extends EffectRenderer {
     public Texture renderStage(Stage stage) {
         mask = renderGetActorMask(stage);
         expand = renderExpandMask(stage, mask);
+        expand = PingPongBlurShader.pingPong(stage.getBatch(), expand, 12);
 //        Texture blurFbo = renderBlurMask(stage, expand);
         output = renderApplyDrop(stage, mask, expand);
 //        expand.dispose();
