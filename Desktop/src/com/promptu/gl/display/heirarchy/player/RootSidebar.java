@@ -3,6 +3,7 @@ package com.promptu.gl.display.heirarchy.player;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.kotcrab.vis.ui.widget.VisTable;
+import com.promptu.Configuration;
 import com.promptu.event.EventBus;
 import com.promptu.gl.assets.Assets;
 import com.promptu.gl.display.heirarchy.player.sidebar.SidebarBody;
@@ -42,8 +43,8 @@ public class RootSidebar extends VisTable implements SidebarToggleEvent.SidebarT
         isShown = true;
         clearActions();
         addAction(Actions.parallel(
-                Actions.alpha(0.9f, .3f),
-                Actions.moveTo(shownPos.x, shownPos.y, .3f),
+                Actions.alpha(0.9f, Configuration.animTime),
+                Actions.moveTo(shownPos.x, shownPos.y, Configuration.animTime),
                 Actions.sizeTo(size.x, size.y)
         ));
         toFront();
@@ -53,8 +54,8 @@ public class RootSidebar extends VisTable implements SidebarToggleEvent.SidebarT
         isShown = false;
         clearActions();
         addAction(Actions.parallel(
-                Actions.fadeOut(.3f),
-                Actions.moveTo(hiddenPos.x, hiddenPos.y, .3f),
+                Actions.fadeOut(Configuration.animTime),
+                Actions.moveTo(hiddenPos.x, hiddenPos.y, Configuration.animTime),
                 Actions.sizeTo(size.x, size.y)
         ));
     }

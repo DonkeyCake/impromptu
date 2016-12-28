@@ -38,6 +38,10 @@ public class MarkerSwitchEvent extends AbstractEvent {
         this.markers = markers;
     }
 
+    public int getActiveMarkerIndex() {
+        return markers.indexOf(activeMarker);
+    }
+
     public static interface MarkerSwitchListener {
         @Subscribe
         public void onMarkerSwitch(Object source, MarkerSwitchEvent event);

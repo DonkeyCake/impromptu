@@ -5,6 +5,7 @@ import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3WindowAdapter;
+import com.bulenkov.darcula.DarculaLaf;
 import com.promptu.concurrency.AtomicFloat;
 import com.promptu.event.events.CloseRequestEvent;
 import com.promptu.gl.GLLauncher;
@@ -15,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -33,6 +35,14 @@ public class DesktopLauncher extends Application {
 
         tweenManager = new TweenManager();
         Tween.registerAccessor(AtomicFloat.class, new AtomicFloatTweenAccessor());
+
+        new Configuration();
+
+        try{
+            UIManager.setLookAndFeel(DarculaLaf.class.getCanonicalName());
+        }catch (IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         if(useOpenGL) startGL(args);
         else startFX(args);

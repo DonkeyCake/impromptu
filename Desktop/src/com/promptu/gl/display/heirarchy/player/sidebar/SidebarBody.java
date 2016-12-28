@@ -11,6 +11,7 @@ import com.kotcrab.vis.ui.widget.file.FileChooserListener;
 import com.promptu.database.LocalDatabase;
 import com.promptu.event.events.ProjectSelectedEvent;
 import com.promptu.gl.display.skin.SkinManager;
+import com.promptu.gl.events.OpenCLIEvent;
 import com.promptu.helpers.LambdaClassListener;
 import com.promptu.project.ProjectManager;
 import com.promptu.serialization.SerializationManager;
@@ -73,15 +74,19 @@ public class SidebarBody extends VisTable {
         TextButton loadBtn = new TextButton("Load project", SkinManager.instance().visX1);
         TextButton saveBtn = new TextButton("Save project", SkinManager.instance().visX1);
 
+        TextButton cliBtn = new TextButton("Open CLI", SkinManager.instance().visX1);
+
         newBtn.addListener(new LambdaClassListener(this::newProject));
         trackBtn.addListener(new LambdaClassListener(this::selectTrack));
         loadBtn.addListener(new LambdaClassListener(this::load));
         saveBtn.addListener(new LambdaClassListener(this::save));
+        cliBtn.addListener(new LambdaClassListener((event, x, y) -> new OpenCLIEvent().fire(this)));
 
         add(newBtn).growX().pad(0, 2, 4, 2).row();
         add(trackBtn).growX().pad(0, 2, 16, 2).row();
         add(loadBtn).growX().pad(0, 2, 4, 2).row();
-        add(saveBtn).growX().pad(0, 2, 4, 2).row();
+        add(saveBtn).growX().pad(0, 2, 16, 2).row();
+        add(cliBtn).growX().pad(0, 2, 4, 2).row();
     }
 
 

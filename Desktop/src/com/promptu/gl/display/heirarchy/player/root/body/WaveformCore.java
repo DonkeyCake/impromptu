@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.kotcrab.vis.ui.widget.VisTable;
+import com.promptu.Configuration;
 import com.promptu.concurrency.AtomicFloat;
 import com.promptu.database.LocalDatabase;
 import com.promptu.event.EventBus;
@@ -155,7 +156,7 @@ public class WaveformCore extends VisTable implements ProjectSelectedEvent.Proje
     private void stopTrack() {
         if(track == null) return;
         track.stop();
-        Tween.to(position, 0, .5f).target(0).ease(TweenEquations.easeInOutSine).start(tweenManager);
+        Tween.to(position, 0, Configuration.animTime).target(0).ease(TweenEquations.easeInOutSine).start(tweenManager);
     }
 
     private double lerp(double x, double y, double t) {
