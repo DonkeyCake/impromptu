@@ -1,0 +1,1 @@
+java -XX:ErrorFile=NUL -jar Desktop.jar -gl -d

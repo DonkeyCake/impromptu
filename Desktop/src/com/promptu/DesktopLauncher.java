@@ -9,6 +9,7 @@ import com.bulenkov.darcula.DarculaLaf;
 import com.promptu.concurrency.AtomicFloat;
 import com.promptu.event.events.CloseRequestEvent;
 import com.promptu.gl.GLLauncher;
+import com.promptu.script.functions.ConfigFunctions;
 import com.promptu.tween.AtomicFloatTweenAccessor;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,8 @@ public class DesktopLauncher extends Application {
             if(args[i].equalsIgnoreCase("-gl")) useOpenGL = true;
             if(args[i].equalsIgnoreCase("--scale")) handleScreenScale(args, i);
             if(args[i].equalsIgnoreCase("-s")) handleScreenScale(args, i);
+            if(args[i].equalsIgnoreCase("--debug")) ConfigFunctions.setDebugMode(true);
+            if(args[i].equalsIgnoreCase("-d")) ConfigFunctions.setDebugMode(true);
         }
 
         tweenManager = new TweenManager();

@@ -2,10 +2,17 @@
   <artifact type="jar" name="Desktop:jar">
     <output-path>$PROJECT_DIR$/build</output-path>
     <root id="archive" name="Desktop.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/Desktop/META-INF/MANIFEST.MF" />
+      </element>
       <element id="module-output" name="Desktop" />
       <element id="module-output" name="Client" />
       <element id="module-output" name="Core" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Desktop/libs/darcula.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/Core/libs/Gson/gson-2.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Client/libs/tween-engine-api.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Desktop/libs/autocomplete/autocomplete-2.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/Desktop/libs/libGDXAiO.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

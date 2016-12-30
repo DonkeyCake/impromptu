@@ -1,0 +1,46 @@
+{
+  "trackName": "Raining Blood",
+  "artist": "Slayer",
+  "markers": [
+	{
+      "type": "BLOCK",
+      "mbid": "",
+      "startTime": "6.54050309542",
+      "endTime": "11.92001772047",
+      "colourHex": "",
+      "title": "intro",
+      "content": ""
+    },
+    {
+      "type": "BLOCK",
+      "mbid": "",
+      "startTime": "12.0002503859",
+      "endTime": "17.40133812274",
+      "colourHex": "",
+      "title": "Harmony",
+      "content": "pinch harmonics on tails"
+    },
+    {
+      "type": "BLOCK",
+      "mbid": "",
+      "startTime": "17.4471838865",
+      "endTime": "21.53221793401",
+      "colourHex": "",
+      "title": " Gallop Riff x3",
+      "content": ""
+    },
+    {
+      "type": "BLOCK",
+      "mbid": "",
+      "startTime": "21.65829533166",
+      "endTime": "22.85029653636",
+      "colourHex": "",
+      "title": "Tail End x1",
+      "content": ""
+    }
+  ],
+  "helpers": [],
+  "fingerprintWaveform": "",
+  "millis": 51.577,
+  "trackPath": "music.wav"
+}
