@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.kotcrab.vis.ui.widget.VisTable;
 import com.promptu.Configuration;
+import com.promptu.api.internal.MarkerController;
 import com.promptu.database.LocalDatabase;
 import com.promptu.database.MarkerPoint;
 import com.promptu.event.EventBus;
@@ -19,6 +20,7 @@ import com.promptu.script.functions.ConfigFunctions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Guy on 25/11/2016.
@@ -27,6 +29,7 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
         TogglePlaybackEvent.TogglePlaybackListener, MarkerSwitchEvent.MarkerSwitchListener {
 
     private LocalDatabase.DataSet dataSet;
+    private MarkerController controller;
     private List<MarkerElement> elements;
     int current = -1;
 
@@ -38,6 +41,14 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
     }
 
     private void init() {
+        controller = new MarkerController(null);
+        controller.setOnSwitch((all, current, index) -> shiftTo(index));
+        controller.setOnBlockEnd((all, current, index) -> {
+            Optional<MarkerElement> optE = elements.stream().filter(el -> el.getMarker().equals(current)).findFirst();
+            if(!optE.isPresent()) return;
+            MarkerElement e = optE.get();
+            elementDone(e, 50);
+        });
         elements = new ArrayList<>();
         populateMarkers();
     }
@@ -52,8 +63,11 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
 
     private void addMarkersToTable() {
         clearChildren();
-        if(this.dataSet != null)
+        if(this.dataSet != null) {
+            this.dataSet.sort();
             this.dataSet.getMarkers().forEach(this::addMarkerToTable);
+            controller.setCurrentMarkers(this.dataSet.getMarkers());
+        }
         add().grow().row();
     }
 
@@ -67,6 +81,7 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
     @Override
     public void act(float delta) {
         super.act(delta);
+        controller.update();
         if(ConfigFunctions.isDebugMode()) {
             if (Gdx.input.isKeyJustPressed(Input.Keys.N))
                 shiftTo(current + 1);
@@ -87,21 +102,16 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
             diff -= single;
             if(e.hasParent())
                 diff += e.getParent().getHeight();
-            Action moveTo;
-            moveTo = Actions.moveTo(0, diff, Configuration.animTime);
+
             if(i[0] == finalIndex) {
-                e.addAction(markerAction(Configuration.markerNext, Configuration.markerNextAlpha,
-                        Configuration.animTime, moveTo));
-            }else if(i[0] == finalIndex +1) {
-                e.addAction(markerAction(Configuration.markerPostproximate, Configuration.markerPostproximateAlpha,
-                        Configuration.animTime, moveTo));
+                elementNext(e, diff);
+            }else if(i[0] == finalIndex + 1) {
+                elementPostProximate(e, diff);
             }else{
                 if(i[0] > finalIndex)
-                    e.addAction(markerAction(Configuration.markerRest, Configuration.markerRestAlpha,
-                            Configuration.animTime, moveTo));
+                    elementRest(e, diff);
                 else
-                    e.addAction(markerAction(Configuration.markerRest, 0,
-                            Configuration.animTime, moveTo));
+                    elementDone(e, diff);
             }
             i[0]++;
         });
@@ -114,6 +124,28 @@ public class MarkerDisplay extends VisTable implements ProjectSelectedEvent.Proj
                 Actions.alpha(alpha, animTime),
                 extra
         );
+    }
+
+    protected void elementNext(MarkerElement e, float diff) {
+        Action moveTo = Actions.moveTo(0, diff, Configuration.animTime);
+        e.addAction(markerAction(Configuration.markerNext, Configuration.markerNextAlpha,
+                Configuration.animTime, moveTo));
+    }
+
+    protected void elementPostProximate(MarkerElement e, float diff) {
+        Action moveTo = Actions.moveTo(0, diff, Configuration.animTime);
+        e.addAction(markerAction(Configuration.markerPostproximate, Configuration.markerPostproximateAlpha,
+                Configuration.animTime, moveTo));
+    }
+    protected void elementRest(MarkerElement e, float diff) {
+        Action moveTo = Actions.moveTo(0, diff, Configuration.animTime);
+        e.addAction(markerAction(Configuration.markerRest, Configuration.markerRestAlpha,
+                Configuration.animTime, moveTo));
+    }
+    protected void elementDone(MarkerElement e, float diff) {
+        Action moveTo = Actions.moveTo(0, diff, Configuration.animTime);
+        e.addAction(markerAction(Configuration.markerRest, 0,
+                Configuration.animTime, moveTo));
     }
 
     @Override

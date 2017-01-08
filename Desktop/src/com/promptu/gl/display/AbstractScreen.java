@@ -1,6 +1,8 @@
 package com.promptu.gl.display;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -10,11 +12,13 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 /**
  * Created by Guy on 24/11/2016.
  */
-public abstract class AbstractScreen implements Screen {
+public abstract class AbstractScreen extends InputAdapter implements Screen {
 
     protected Stage stage;
     protected ScreenViewport viewport;
     protected OrthographicCamera camera;
+
+    protected InputMultiplexer multiplexer;
 
     @Override
     public void show() {
@@ -23,7 +27,9 @@ public abstract class AbstractScreen implements Screen {
         stage = new Stage(viewport);
 
 
-        Gdx.input.setInputProcessor(stage);
+        multiplexer = new InputMultiplexer(this, stage);
+
+        Gdx.input.setInputProcessor(multiplexer);
     }
 
     protected abstract void update(float delta);

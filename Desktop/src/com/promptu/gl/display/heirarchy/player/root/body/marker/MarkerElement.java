@@ -48,8 +48,8 @@ public class MarkerElement extends VisTable {
         add(deleteBtn).right().size(btnSize).padRight(4).padBottom(4).row();
     }
 
-    public void shiftTo(int index) {
-
+    public MarkerPoint getMarker() {
+        return marker;
     }
 
     @Override

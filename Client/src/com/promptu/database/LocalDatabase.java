@@ -7,10 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -94,14 +91,14 @@ public class LocalDatabase {
 
         private String trackName;
         private String artist;
-        private Set<MarkerPoint> markers;
+        private List<MarkerPoint> markers;
         private Set<Helper> helpers;
         private String fingerprintWaveform;
         private float duration;
         private String trackPath;
 
         public DataSet() {
-            markers = new LinkedHashSet<>();
+            markers = new ArrayList<>();
             helpers = new LinkedHashSet<>();
             fingerprintWaveform = "";
             trackName = "";
@@ -119,11 +116,11 @@ public class LocalDatabase {
         public String getFingerprintWaveform() { return this.fingerprintWaveform; }
         public void setFingerprintWaveform(String fingerprintWaveform) { this.fingerprintWaveform = fingerprintWaveform; }
 
-        public Set<MarkerPoint> getMarkers() {
+        public List<MarkerPoint> getMarkers() {
             return markers;
         }
 
-        public void setMarkers(Set<MarkerPoint> markers) {
+        public void setMarkers(List<MarkerPoint> markers) {
             this.markers = markers;
         }
 
@@ -167,6 +164,10 @@ public class LocalDatabase {
         private static String normalize(String path) {
             File base = new File("./");
             return base.toURI().relativize(new File(path).toURI()).getPath();
+        }
+
+        public void sort() {
+            markers.sort(Comparator.comparing(MarkerPoint::startTime));
         }
 
     }

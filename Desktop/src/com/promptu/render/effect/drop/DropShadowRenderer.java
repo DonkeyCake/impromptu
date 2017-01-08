@@ -12,7 +12,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.promptu.render.effect.EffectRenderer;
+import com.promptu.gl.api.internal.EffectRenderer;
 import com.promptu.render.effect.shaders.PingPongBlurShader;
 import com.promptu.utils.ClasspathUtils;
 import com.promptu.utils.GLUtils;

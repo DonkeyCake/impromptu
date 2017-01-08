@@ -1,6 +1,7 @@
 package com.promptu.gl.display;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -18,7 +19,7 @@ public class PlayerScreen extends AbstractScreen {
 
     private RootSidebar sidebar;
     DropShadowRenderer shadowRenderer;
-    Texture texture;
+    Texture shadowTexture;
 
     public PlayerScreen() {
         shadowRenderer = new DropShadowRenderer();
@@ -48,10 +49,10 @@ public class PlayerScreen extends AbstractScreen {
 
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-        texture = shadowRenderer.renderStage(stage);
+        shadowTexture = shadowRenderer.renderStage(stage);
         stage.getBatch().begin();
         stage.getBatch().setColor(Color.WHITE);
-        stage.getBatch().draw(texture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        stage.getBatch().draw(shadowTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         stage.getBatch().end();
         Gdx.gl.glDisable(GL20.GL_BLEND);
     }
@@ -65,5 +66,13 @@ public class PlayerScreen extends AbstractScreen {
         sidebar.update();
 
         shadowRenderer.resize(w, h);
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.ESCAPE) {
+            stage.unfocusAll();
+        }
+        return super.keyDown(keycode);
     }
 }

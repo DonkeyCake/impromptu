@@ -19,7 +19,6 @@ import com.promptu.event.events.ShareReferenceEvent;
 import com.promptu.fx.display.ActivePaneController;
 import com.promptu.gl.assets.Assets;
 import com.promptu.gl.utils.TextureCache;
-import com.promptu.project.ProjectManager;
 import com.promptu.utils.ClasspathUtils;
 
 import java.io.File;
@@ -32,6 +31,7 @@ public class WaveformSummary extends VisTable implements ProjectSelectedEvent.Pr
     Sprite sprite;
     Sprite line;
     AtomicFloat position;
+    AtomicFloat duration;
     Vector2 v;
 
     public WaveformSummary() {
@@ -85,13 +85,13 @@ public class WaveformSummary extends VisTable implements ProjectSelectedEvent.Pr
 
     public float getCurrentX() {
         float p = position.floatValue();
-        float d = ProjectManager.instance().dataSet.getDuration();
+        float d = duration.get();
         float perc = p / d;
         return getWidth()*perc;
     }
 
     public void setCurrentX(float perc) {
-        position.set(ProjectManager.instance().dataSet.getDuration() * perc);
+        position.set(duration.get() * perc);
     }
 
     @Override
@@ -120,6 +120,8 @@ public class WaveformSummary extends VisTable implements ProjectSelectedEvent.Pr
         if(o instanceof AtomicFloat) {
             if (event.getIdentifier().equalsIgnoreCase("position.activeTrack"))
                 position = (AtomicFloat) o;
+            else if (event.getIdentifier().equalsIgnoreCase("duration.activeTrack"))
+                duration = (AtomicFloat) o;
         }
     }
 }

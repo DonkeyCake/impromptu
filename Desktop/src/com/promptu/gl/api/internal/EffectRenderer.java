@@ -1,4 +1,4 @@
-package com.promptu.render.effect;
+package com.promptu.gl.api.internal;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;

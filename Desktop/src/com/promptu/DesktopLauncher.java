@@ -5,10 +5,12 @@ import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3WindowAdapter;
+import com.badlogic.gdx.backends.lwjgl3.audio.OpenALMusic;
 import com.bulenkov.darcula.DarculaLaf;
 import com.promptu.concurrency.AtomicFloat;
 import com.promptu.event.events.CloseRequestEvent;
 import com.promptu.gl.GLLauncher;
+import com.promptu.gl.tween.OpenALMusicTweenAccessor;
 import com.promptu.script.functions.ConfigFunctions;
 import com.promptu.tween.AtomicFloatTweenAccessor;
 import javafx.application.Application;
@@ -38,6 +40,7 @@ public class DesktopLauncher extends Application {
 
         tweenManager = new TweenManager();
         Tween.registerAccessor(AtomicFloat.class, new AtomicFloatTweenAccessor());
+        Tween.registerAccessor(OpenALMusic.class, new OpenALMusicTweenAccessor());
 
         new Configuration();
 
